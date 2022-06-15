@@ -1,0 +1,99 @@
+@font-face {
+  font-family: poppins;
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url("./fonts/Poppins/Poppins-Bold.ttf");
+}
+
+.backup-btn {
+  color: white;
+  background-color: blue;
+  border: solid 0 transparent;
+  width: 40mm;
+  height: 10mm;
+  font-family: poppins;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 12pt;
+  margin-left: 90px;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.browse {
+  background-color: darkslategray;
+  border: solid 0 transparent;
+  width: 40mm;
+  height: 10mm;
+  color: white;
+  margin-top: 5mm;
+  margin-bottom: 5mm;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: poppins;
+  margin-left: 10mm;
+}
+
+select {
+  width: 60mm;
+  height: 10mm;
+  font-family: poppins;
+  text-indent: 3mm;
+  padding: 10px;
+  border: solid 1px lightgrey;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  text-align: center;
+}
+
+input {
+  width: 150mm;
+  height: 10mm;
+  border: solid 1px lightgrey;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: text;
+}
+
+.backup-header {
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14pt;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.inputs {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 50px;
+  padding-left: 90px;
+}
+
+li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.backup-text, .backup-note {
+  padding-left: 90px;
+  padding-right: 50px;
+}
+/*# sourceMappingURL=email-backup.css.map */

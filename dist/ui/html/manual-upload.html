@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Manual Upload </title>
+    <link rel="Stylesheet" type="text/css" href="../style/manual-upload.css" />
+</head>
+<body>
+    
+    <div id="page" class="page">
+        <!-- The header fro the school -->
+        <header class="header">
+            <div class="title" id="title"> Divine Increase School </div>
+            <div class="motto" id="motto"> Motto: Dedicated to excellence </div>
+            <div class="address" id="address"> Address: 8, Martin's Gold street, Abule-Osho, Matogbun Road, Ogun State </div>
+            <div class="phone" id="phone"> Tel: 0703 541 3941 </div>
+        </header>  
+        
+        <!-- The section for the instruction of the upload -->
+        <div>
+
+        </div>
+
+        <!-- The section for the settings == class and the subjects -->
+        <div id="settings" class="settings">
+            <section>
+                <select id="select-year">
+                    <option> Select academic year </option>
+                </select>
+            </section>
+            <section>
+                <select id="select-term">
+                    <option> Select term </option>
+                    <option> First term </option>
+                    <option> Second term </option>
+                    <option> Third term </option>
+                </select>
+            </section>
+            <section >
+                <select id="select-class">
+                    <option> Select class </option>
+                    <option> JSS 1 </option>
+                    <option> JSS 2 </option>
+                    <option> JSS 3 </option>
+                    <option> SSS 1 </option>
+                    <option> SSS 2 </option>
+                    <option> SSS 3 </option>
+
+                </select>
+            </section>
+
+        </div>
+
+        <!-- The container for subject and button -->
+        <div class="subject-button-container">
+            <section>
+                <select id="select-subject">
+                    <option> Select subject </option>
+                </select>
+            </section>
+            <section>
+                <button id="display-students" style="display: none;"></button>
+            </section>
+        </div>
+
+        <!-- The section for the table of the scores -->
+        <div class="table-container">
+            <table id="score-table" class="score-table" contenteditable="false" style="border: solid transparent;">
+                <tr style="border: solid transparent;">
+                    <td style="border: solid 1px black;" contenteditable="false"> Serial No </td>
+                    <td contenteditable="false"> Student No </td>
+                    <td contenteditable="false"> Surname </td>
+                    <td contenteditable="false"> First Name </td>
+                    <td contenteditable="false"> Middle Name </td>
+                    <td contenteditable="false" style="padding-top: 5px; padding-bottom: 5px;">
+                        <span> CA Score </span> 
+                        <span style="padding-left: 10px;"> <button id="edit-ca-score"> Edit </button></span>
+                    </td>
+                    <td contenteditable="false" style="padding-top: 5px; padding-bottom: 5px;">
+                        <span> Exam Score </span> 
+                        <span style="padding-left: 10px;"> <button id="edit-exam-score"> Edit </button></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <button id="save-changes" style="font-family: poppins; margin-left: 17mm; background-color: rgb(10, 10, 46); border: solid 0px transparent; width: 50mm; height: 10mm; font-size: 12pt; color: white; text-align: center; margin-top: 10mm; border-radius:2mm ; border: solid 0px transparent;"> Save changes </button>
+        </div>
+
+    </div>
+
+    <script type="text/javascript"> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/manual-upload.js"></script>
+</body>
+</html>

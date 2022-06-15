@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Upload Score </title>
+    <link rel="Stylesheet" type="text/css" href="../style/upload-score.css" />
+</head>
+<body style="overflow-x: hidden; overflow-y: hidden;">
+    
+    <div class="page">
+
+        <!--The left main container-->
+        <div class="left" style="padding-left: 40px; padding-right: 40px; padding-top: 60px;">
+            <div> <img alt="school-logo" src="#" width="150" height="150" /> </div>
+            <div> INSTRUCTION </div>
+            <div> 
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo quos, aspernatur porro temporibus vel minus fugit voluptate rem expedita voluptatum nostrum deleniti quidem ut magni ab a libero minima recusandae?
+            </div>
+        </div>
+
+        <!-- The right container -->
+        <div class="right" style="background-color: rgb(248, 246, 246)">
+
+            <section style="padding-top: 40px;">
+                <div style="font-size: 25pt; font-family: poppins-bold;"> Upload Score </div>
+                <div class="upload-message" style="text-align: justify;">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum sapiente eaque reprehenderit esse, nisi voluptatem cumque inventore lauda
+                </div>
+            </section>
+
+            <div style="display: flex; flex-direction: row; padding-top: 40px;">
+                <section class="section">
+                    <div style="font-family: poppins-bold"> Academic year </div>
+                    <div> 
+                        <select id="select-year">
+                            <option> Select year </option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="section" style="margin-left: 150px; position: relative;">
+                    <div style="font-family: poppins-bold"> Academic term </div>
+                    <div> 
+                        <select id="select-term">
+                            <option> Select term </option>
+                            <option> First term </option>
+                            <option> Second term </option>
+                            <option> Third term </option>
+                        </select>
+                    </div>
+                </section>
+            </div>
+
+            <div style="display: flex; flex-direction: row; padding-top: 20px;">
+                <section class="section">
+                    <div style="font-family: poppins-bold"> Class </div>
+                    <div> 
+                        <select id="select-class">
+                            <option> Select class </option>
+                            <option> JSS 1 </option>
+                            <option> JSS 2 </option>
+                            <option> JSS 3 </option>
+                            <option> SSS 1 </option>
+                            <option> SSS 2 </option>
+                            <option> SSS 3 </option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="section" style="margin-left: 150px; position: relative;">
+                    <div style="font-family: poppins-bold"> Upload type </div>
+                    <div> 
+                        <select id="select-upload-type">
+                            <option> Select upload type </option>
+                            <option> Single file upload </option>
+                            <option> Multiple file upload </option>
+                        </select>
+                    </div>
+                </section>
+            </div>
+
+            <div style="display: flex; flex-direction: row; padding-top: 20px;">
+                <section class="section">
+                    <div style="font-family: poppins-bold"> Score type </div>
+                    <div> 
+                        <select id="select-score-type">
+                            <option> Select score type </option>
+                            <option> Both </option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="section" style="margin-left: 150px; position: relative;">
+                    <div style="font-family: poppins-bold"> File type </div>
+                    <div> 
+                        <select id="select-file-type">
+                            <option> Select file type </option>
+                            <option class="single-file"> Word (.docx) </option>
+                            <option class="single-file"> PDF (.pdf) </option>
+                            <option class="single-file"> Excel (.xlsx) </option>
+                            <option class="folder"> Folder (.docx, .pdf, .xlsx) </option>
+                        </select>
+                    </div>
+                </section>
+            </div>
+
+            <section class="section path-section" style="padding-top: 20px;">
+                <div style="font-family: poppins-bold;"> Path </div>
+                <div class="path-inner-section" style="display: flex; flex-direction: row; align-items: center;"> 
+                    <div> 
+                        <input type="text" class="path" style="height: 10mm; width: 110mm; text-indent: 3mm; font-size: 11pt; font-family: poppins;" contenteditable="false" disabled id="path" /> 
+                    </div>
+                    <div> <button style="height: 10mm; color: white; background-color: rgb(14, 24, 24); width: 25mm; margin-left: 40px; font-family: poppins;" id="browse"> Browse... </button> </div>
+                </div>
+            </section>
+
+            <section class="section" style="display: flex; flex-direction: row; align-items: center; padding-top: 40px; padding-bottom: 40px;">
+                <div>
+                     <button style="color: white; background-color: rgb(13, 13, 58); height: 10mm; position: relative; width: 20mm; font-family: poppins;" id="upload"> Upload 
+                    </button>
+                </div>
+                <!-- <div style="padding-left: 30px;" > 
+                    <progress  value="1" style="height: 7mm;" id="progress"></progress> 
+                </div> -->
+                <div style="padding-left: 30px; font-family: constantia;"> <span class="progress-mesg" id="progress-mesg"></span></div>
+            </section>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript"> var exports ={} </script>
+    <script type="text/javascript" src="../../renderers/upload-scores.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+$button-color : midnightblue;
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url('./fonts/Poppins/Poppins-Bold.ttf');
+}
+
+:root{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.page{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+
+/** Styling for the header */
+.header{
+    position: relative;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    font-weight: bold;
+
+    .title{
+        font-family: poppins-bold;
+    }
+
+    .title, .motto, .address, .phone {
+        text-align: center;
+    }
+
+    .motto{
+        font-size: 0.8rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    .address, .phone{
+        font-size: 0.85rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    div{
+        position: relative;
+        padding: 0.2rem
+    }
+}
+
+
+.button-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 15%;
+    margin-top: 2%;
+
+    .inner-button-container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        button {
+            background-color: rgb(4, 4, 39);
+            border: solid transparent 0;
+            color: white;
+            width: 12rem;
+            height: 3rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: poppins;
+            border-radius: 1mm;
+        }
+    }
+
+}
+
+.mast {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 8%;
+    background-color: rgb(28, 48, 48);
+    align-items: center;
+    color: white;
+    font-family: poppins-bold;
+
+    #mast-dis{
+        position: relative;
+        left: 1.5rem;
+    }
+
+    #mast-message{
+        position: relative;
+        right: 1.5rem;
+    }
+}
+
+.background-image-container{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 75%;
+    background-image: url('../img/background/homeimg3.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 5%;
+    background-color: rgb(33, 58, 58);
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    text-indent: 0.5rem;
+    font-family: poppins;
+
+    .copy{
+        font-size: 1.3rem;
+    }
+}

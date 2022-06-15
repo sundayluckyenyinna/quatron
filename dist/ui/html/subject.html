@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Subject Management </title>
+    <link rel="Stylesheet" type="text/css" href="../style/subject.css" />
+</head>
+<body>
+    <div style="position: absolute; display: flex; justify-content: center; align-items: center; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; width: 100%; height: auto;">
+    <div class="page" id="page" style="padding-top: 2mm;">
+
+        <!--The left main container-->
+        <div class="left" style="padding-left: 40px; padding-right: 40px; padding-top: 60px;">
+            <div> <img alt="school-logo" src="#" width="150" height="150" /> </div>
+            <div> INSTRUCTION </div>
+            <div> 
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo quos, aspernatur porro temporibus vel minus fugit voluptate rem expedita voluptatum nostrum deleniti quidem ut magni ab a libero minima recusandae?
+            </div>
+        </div>
+
+        <!-- The right container -->
+        <div class="right">
+
+            <section style="padding-top: 40px;">
+                <div style="font-size: 30pt; font-family: poppins-bold;"> Subject Management </div>
+                <div class="upload-message" style="text-align: justify; padding-top: 10px; font-size: 11pt;">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum sapiente eaque reprehenderit esse, nisi voluptatem cumque inventore laudantium itaque ad voluptatum eligendi quis numquam excepturi error. Dicta, earum optio?
+                </div>
+            </section>
+
+            <div style="display: flex; flex-direction: row; padding-top: 40px;">
+                <section class="section">
+                    <div style="font-family: poppins-bold"> Academic year </div>
+                    <div> 
+                        <select id="select-year">
+                            <option> Select year </option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="section" style="margin-left: 150px; position: relative;">
+                    <div style="font-family: poppins-bold"> Academic term </div>
+                    <div> 
+                        <select id="select-term">
+                            <option> First term  </option>
+                            <option> Second term  </option>
+                            <option> Third term  </option>
+                        </select>
+                    </div>
+                </section>
+            </div>
+
+            <div style="display: flex; flex-direction: row; padding-top: 20px;">
+                <section class="section">
+                    <div style="font-family: poppins-bold"> Level </div>
+                    <div> 
+                        <select id="select-level">
+                            <option> Junior </option>
+                            <option> Senior </option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="section" id="department-section" style="display: none; margin-left: 150px;">
+                    <div style="font-family: poppins-bold;"> Department </div>
+                    <div>
+                        <select id="select-department" style="width: 70mm;">
+                            <option class="senior"> Science </option>
+                            <option class="senior"> Commercial </option>
+                            <option class="senior"> Arts </option>
+                            <option class="senior"> Science and Commercial </option>
+                            <option class="senior"> Science and Arts </option>
+                            <option class="senior"> Commercial and Arts </option>
+                            <option class="senior"> General </option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- <section class="section" style="margin-left: 150px; position: relative; display: flex;flex-direction: row; align-items: center; justify-content: space-around;">
+                    <div style="font-family: poppins-bold; padding-top: 30px; display: none;">
+                        <button style="height: 10mm; color: white; background-color: rgb(28, 7, 56); width: 40mm;font-family: poppins;"> Select students </button>
+                    </div>
+                    
+                </section> -->
+            </div>
+
+            <form onsubmit="return false;">
+            <section class="section path-section" style="padding-top: 20px; display: none;" id="create">
+                <div style="font-family: poppins-bold;"> Subject name </div>
+                <div class="path-inner-section" style="display: flex; flex-direction: row; align-items: center;"> 
+                    <div> 
+                        <input type="text" class="path" style="height: 10mm; width: 100mm; text-indent: 3mm; font-size: 11pt; font-family: poppins;" id="subject-name" required /> 
+                    </div>
+                    <div> <button style="height: 10mm; color: white; background-color: rgb(14, 24, 24); width: 25mm; margin-left: 40px; font-family: poppins;" id="create-subject"> Create </button> </div>
+                </div>
+            </section>
+            </form>
+
+            <section class="section" style="display: flex; flex-direction: row; align-items: center; padding-top: 40px; padding-bottom: 40px; justify-content: space-between;">
+                <div>
+                     <button style="color: white; background-color: rgb(13, 13, 58); height: 10mm; position: relative; width: 60mm; font-family: poppins;" id="add-subject"> Add subject
+                    </button>
+                </div>
+                <div style="display: none;">
+                    <button style="color: white; background-color: maroon; height: 10mm; position: relative; width: 60mm; font-family: poppins; border: solid 0px transparent;"> Remove Subject
+
+                   </button>
+               </div>
+            </section>
+
+            <section style="padding-bottom: 30px; display: flex;flex-direction: row;">
+                <div> 
+                    <progress max="100" value="70" style="height: 7mm;"></progress> 
+                </div>
+                <div style="padding-left: 30px; font-family: constantia;"> <span class="progress-mesg" id="progress-mesg"> generating reports... </span></div>
+            </section>
+        </div>
+
+    </div>
+    </div>
+
+    <script type="text/javascript"> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/register-subject.js"></script>
+</body>
+</html>

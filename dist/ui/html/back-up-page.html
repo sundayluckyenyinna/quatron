@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Back up </title>
+    <link rel="Stylesheet" type="text/css" href="../style/back-up.css" />
+</head>
+<body>
+    
+    <!-- The container for the overall page of the document -->
+    <div class="page" id="page">
+
+        <!-- The container for the header -->
+        <div class="header">
+            <section class="backup-text" style="font-family: poppins;"> BackupBox </section>
+            <div class="school-logo">
+                <img alt="school-logo" src="" width="100" height="100"/>
+            </div>
+        </div>
+
+        <!-- The containers for the contents-->
+        <div class="content-outer">
+            <div class="content-left navigation" id="content-left">
+                <section class="overview">
+                    <div> <img alt="icon" src="" width="20" height="20" /> </div>
+                    <div> Overview </div>
+                </section>
+                <section class="options-container">
+                    <div class="options-text"> Backup Options </div>
+                    <div class="email option">
+                        <div> <img alt="icon" src="" width="20" height="20" /> </div> 
+                        <div id="email"> Email </div>
+                    </div>
+                    <div class="drive option">  
+                        <div> <img alt="icon" src="" width="20" height="20" /> </div> 
+                        <div id="drive"> Drive </div>
+                    </div>
+                    <div class="disk option">
+                        <div> <img alt="icon" src="" width="20" height="20" /> </div> 
+                        <div> Disk </div>
+                    </div>
+
+                </section>
+            </div>
+            
+            <div class="content-right selection">
+                <div class="right-header">
+
+                </div>
+                <div style="position: relative; width: 100%; display: flex; flex-direction: row; justify-content: center;align-items: center;" class="right-content">
+                    <webview src="email-backup.html" style="position: relative; width: 98%; height: 98%;" id="webview" nodeintegration plugins webpreferences="allowRunningInsecureContent, javascript=yes, contextIsolation=no, nodeIntegration=yes"></webview>
+                </div>
+            </div>
+
+            <!-- https://drive.google.com/drive/u/0/my-drive -->
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        // const w =  document.getElementById('webview');
+        // w.addEventListener('dom-ready', function(){
+        //     w.openDevTools();
+        // });
+
+        // console.log( w );
+        let isOnline = false; 
+
+        if( navigator.onLine ){
+            isOnline = true;
+        }
+
+        const driveButton = document.getElementById('drive');
+        const emailButton = document.getElementById('email');
+        const webView = document.getElementById('webview');
+
+        // add the event listener to the webview in case it fails to load a page due to no internet connection
+
+        window.addEventListener('online', function(){
+            isOnline = true;
+            // check and update the url of the webview
+            if ( webView.src = 'drive-error-page.html' ){
+                webView.src = 'https://drive.google.com/drive/u/0/my-drive';
+            }
+        });
+
+        window.addEventListener('offline', function(){
+            isOnline = false;
+        });
+
+        driveButton.onclick = function( event ){
+            if( isOnline ){
+                webView.src = 'https://drive.google.com/drive/u/0/my-drive';
+                return;
+            }
+            webView.src = 'drive-error-page.html'; return;
+        }
+
+        emailButton.onclick = function( event ){
+            webView.src = 'email-backup.html';
+        }
+
+    </script>
+
+</body>
+</html>

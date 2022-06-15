@@ -1,0 +1,204 @@
+@font-face {
+  font-family: poppins;
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url("./fonts/Poppins/Poppins-Bold.ttf");
+}
+
+select, input, button {
+  border: solid 0px transparent;
+  border-radius: 2mm;
+  outline: none;
+  cursor: pointer;
+}
+
+/** Set the defaults styling */
+:root, ::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+body {
+  background-image: url("../img/background/homeimg3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+select, input {
+  border: solid 1px black;
+}
+
+/** Style the main container inside the page */
+.outer-container {
+  position: relative;
+  width: 70%;
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/** *Style the left part of the main container */
+.left {
+  position: relative;
+  background-color: #0d0d31;
+  width: 30%;
+  height: auto;
+  padding: 40px;
+  text-align: justify;
+  color: white;
+}
+
+.right {
+  background-color: white;
+  padding: 50px;
+  width: 70%;
+}
+
+/** style the top-right section*/
+.right-top-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.right-top-section .register-label label {
+  position: relative;
+  font-size: 2rem;
+  font-family: poppins-bold;
+}
+
+.right-top-section .register-message {
+  position: relative;
+  font-size: 1.0rem;
+  text-align: justify;
+  padding-top: 20px;
+}
+
+.right-bottom-section {
+  position: relative;
+  padding-top: 40px;
+}
+
+.right-bottom-section .academic-year-label {
+  font-size: 1.5rem;
+  font-family: poppins-bold;
+}
+
+.right-bottom-section .selection-container, .right-bottom-section .description-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 15pt;
+}
+
+.right-bottom-section .selection-container .year-label, .right-bottom-section .description-container .year-label {
+  padding-top: 10px;
+}
+
+.right-bottom-section .selection-container .select, .right-bottom-section .description-container .select {
+  position: relative;
+  padding-top: 10px;
+}
+
+.right-bottom-section .selection-container .select .select-year, .right-bottom-section .description-container .select .select-year {
+  position: relative;
+  height: 10mm;
+  font-size: 13pt;
+  font-family: poppins;
+  text-align: center;
+  padding-right: 3mm;
+  padding-left: 3mm;
+}
+
+.right-bottom-section .selection-container .btn, .right-bottom-section .description-container .btn {
+  width: 60mm;
+  height: 10mm;
+  text-align: left;
+  width: 20mm;
+  font-family: poppins-bold;
+  color: white;
+  background-color: #0d0d31;
+  border: solid 0px transparent;
+  border-radius: 1mm;
+  background-image: url("../img/icons/315164_add_note_icon.png");
+  background-size: 50% 80%;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-right: 3mm;
+}
+
+.right-bottom-section .selection-container .year-input, .right-bottom-section .description-container .year-input {
+  margin-left: 30px;
+  height: 10mm;
+  text-indent: 3mm;
+  font-size: 11pt;
+  font-family: poppins;
+}
+
+.right-bottom-section .selection-container .year-input:focus, .right-bottom-section .description-container .year-input:focus {
+  width: 40mm;
+  font-family: poppins-bold;
+}
+
+.right-bottom-section .selection-container .btn-and-year, .right-bottom-section .description-container .btn-and-year {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 40px;
+}
+
+.right-bottom-section .description-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 50px;
+  left: 0;
+}
+
+.right-bottom-section .description-container .desc-box {
+  padding-left: 0px;
+  padding-top: 10px;
+}
+
+.right-bottom-section .description-container .desc-box .box {
+  height: 10mm;
+  width: 110mm;
+  font-size: 11pt;
+  font-family: poppins;
+  text-indent: 5mm;
+  outline: none;
+  border-radius: 2mm;
+}
+/*# sourceMappingURL=register-term.css.map */

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Session registration </title>
+    <link rel="Stylesheet" type="text/css" href="../style/register-term.css" />
+</head>
+<body>
+    
+    <form id="form" onsubmit="handle();">
+    <div class="page" id="page"  style="font-family: poppins; display: flex; align-items: center; position: relative; justify-content: center; width: 100%; height: 90%;">
+
+        <!-- The Overall div container in the page-->
+        <div class="container outer-container">
+            <!-- The left side of the container -->
+            <div class="container-left left">
+                <div> <img alt="school-logo" width="150" height="150" /> </div>
+                <section>
+                    <div> <label> Instruction </label> </div>
+                    <div class="instruction-message">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, cumque. Ipsum, praesentium eum cumque aperiam totam unde cum? Facere, molestiae accusamus natus quod dignissimos voluptates debitis nesciunt maxime mollitia vero!
+                    </div>
+                </section>
+            </div>
+
+            <!--The right container-->
+            <div class="container-right right">
+                <!-- The first paragraph -->
+                <div class="right-top-section">
+                    <div class="register-label"> <label> Session registration </label></div>
+                    <div class="register-message"> 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis commodi ullam saepe perspiciatis ipsa fugit nobis impedit iure mollitia
+                    </div>
+                </div>
+                
+                <!-- The bottom section -->
+                <div class="right-bottom-section">
+                    <div class="academic-year-label"> Academic Year </div>
+                    <section class="selection-container">
+                        <div class="year-label"> <label> Year </label></div>
+                        <div class="select"> 
+                            <select class="select-year" id="select-year">
+                                <option> All Academic Years </option>
+                            </select>
+                        </div>
+                        <section class="btn-and-year">
+                            <div> <button class="btn" id="add-btn"> Add </button></div>
+                            <div> <input type="number" class="year-input" placeholder="Enter year" id="year-input" required /> </div>
+                        </section>
+                    </section>
+                    <section class="description-container">
+                        <div class="desc-label"> <label> Description </label></div>
+                        <div class="desc-box"> <input type="text" class="box" placeholder="Enter a description here" id="desc" required /> </div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </form>
+
+    <script> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/register-term.js"></script>
+    <script type="text/javascript">
+        function handle(){
+            return false;
+        };
+    </script>
+</body>
+</html>

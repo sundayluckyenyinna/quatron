@@ -1,0 +1,163 @@
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+body{
+    font-family: poppins;
+}
+
+/** Styling for the header */
+.header{
+    position: relative;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    font-weight: bold;
+
+    .title{
+        font-family: poppins-bold;
+    }
+
+    .title, .motto, .address, .phone {
+        text-align: center;
+    }
+
+    .motto{
+        font-size: 0.8rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    .address, .phone{
+        font-size: 0.85rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    div{
+        position: relative;
+        padding: 0.2rem
+    }
+}
+
+
+.settings {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 15mm;
+
+    select{
+        width: 70mm;
+        height : 10mm;
+        text-align: center;
+        outline: none;
+        overflow: hidden;
+        font-size: 15pt;
+        font-family: poppins;
+    }
+}
+
+.subject-button-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-left: 118px;
+    padding-top: 40px;
+    justify-content: space-between;
+
+    select{
+        width: 120mm;
+        height : 10mm;
+        text-align: center;
+        outline: none;
+        overflow: hidden;
+        font-size: 15pt;
+        font-family: poppins;        
+    }
+
+    button{
+        position: relative;
+        width: 70mm;
+        height : 10mm;
+        text-align : center;
+        color: white;
+        background-color: rgb(9, 9, 34);
+        border: solid 1px transparent;
+        font-family: poppins;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+}
+
+.table-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+
+    .score-table{
+        position: relative;
+        margin-top: 15mm;
+    }
+
+    td{
+        background-color: rgb(10, 10, 48);
+        min-width: 45mm;
+        font-size: 12pt;
+        text-align : center;
+        color: white;
+        height: 10mm;
+
+        #edit-ca-score, #edit-exam-score{
+            border: solid transparent;
+            font-family: poppins;
+            background-color: blue;
+            color: white;
+            font-weight : bold;
+            cursor: pointer;
+        }
+    }
+
+    .student-row{
+        background-color: wheat;
+    }
+
+    .column{
+        color: black;
+        font-weight: bold;
+        font-family: poppins;
+        background-color: wheat;
+        border: solid 1px transparent;
+        
+
+        .score-input-column{
+            position: relative;
+            color: inherit;
+            font-weight: inherit;
+            font-family: inherit;
+            border: inherit;
+            font-size: 12pt;
+            outline: none;
+            overflow: hidden;
+            background-color: transparent;
+            text-align: center;
+        };
+    }
+}
+

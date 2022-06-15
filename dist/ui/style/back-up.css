@@ -1,0 +1,191 @@
+@font-face {
+  font-family: poppins;
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url("./fonts/Poppins/Poppins-Bold.ttf");
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.page {
+  width: 99%;
+  height: 99%;
+  right: 10px;
+  left: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-right: 10px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightgrey;
+  height: 50px;
+}
+
+.header .backup-text {
+  font-family: poppins;
+  font-weight: bold;
+  font-size: 15pt;
+  text-indent: 4mm;
+  color: green;
+}
+
+.header .school-logo {
+  position: inherit;
+  margin-right: 4mm;
+}
+
+.content-outer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  bottom: 0;
+  top: 50px;
+}
+
+.content-outer .content-left {
+  position: relative;
+  width: 250px;
+  background-color: lightgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 10mm;
+}
+
+.content-outer .content-left .overview {
+  position: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.5em;
+  background-color: yellow;
+}
+
+.content-outer .content-left .options-container {
+  position: inherit;
+  display: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.content-outer .content-left .options-container .options-text {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.content-outer .content-left .options-container .option {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: solid 1px black;
+}
+
+.content-outer .content-right {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin-left: 5px;
+}
+
+.content-outer .content-right .right-header {
+  position: inherit;
+  width: 100%;
+  height: 6.5%;
+  background-color: lightgrey;
+}
+
+.content-outer .content-right .right-content {
+  position: relative;
+  width: 100%;
+  height: 92.5%;
+}
+/*# sourceMappingURL=back-up.css.map */

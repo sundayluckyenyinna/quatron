@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> School Registration & Settings </title>
+    <link rel="Stylesheet" type="text/css" href="../style/school-registration-settings.css" />
+</head>
+<body>
+    
+    <div class="page">
+        <!-- Section for the school registration-->
+        <fieldset>
+            <legend> School Registration </legend>
+            <form>
+                <section class="school-section">
+                    <label class="school-label"> Name </label>
+                    <input type="text" id="school-name" class="school-input small-label"  />
+                    <input type="button" class="edit" id="edit" value="Edit" />
+                </section>
+                <section class="school-section">
+                    <label class="school-label"> Motto </label>
+                    <input type="text" id="school-motto" class="school-input small-label" />
+                    <input type="button" class="edit"  value="Edit" />
+                </section>
+                <section class="school-section">
+                    <label class="school-label"> Address </label>
+                    <input type="text" id="school-address" class="school-input" />
+                    <input type="button" class="edit"  value="Edit" />
+                </section>
+                <section class="school-section">
+                    <label class="school-label"> Logo </label>
+                    <input type="file" id="school-logo-selector" accept="image/*" style="margin-left: 50px;" />
+                    <img src="#" alt="logo" width="150" height="150" id="school-logo-img" />
+                </section>
+            </form>
+        </fieldset>
+
+        <!-- The fieldset for the emails -->
+        <fieldset>
+            <legend> Email Registration </legend>
+            <div class="message">
+                This section deals with the registration of electronic mails addresses that will be used by this application in the processing of backups of the school records at the end of the term or session. 
+                <div>
+                    <ul>
+                        <li> Enter at least one email address in the input box below. </li>
+                        <li> If the school have multiple email addresses, click the add button shown to enable the entry of multiple addresses.</li>
+                        <li> If there be any reason whatsoever to do away with an address, click the trash button next to the specific email address to delete it. </li>
+                        <li> Note during back up of the school records to email, <strong> all </strong> the registered email address will be updated of the backup. On this note, therefore, if this is not desired, <i>register only those email to which the backup is desired. </i></li>
+                    </ul>
+                </div>
+                <div>
+                    <button id="email-add"> Add </button>
+                </div>
+                <section class="email-input-section section" id="email-outer-section">
+                    <!-- <div class="email-input-inner-container">
+                        <input type="text" placeholder="Enter email address" class="email-input" />
+                        <button class="email-trash trash"> Trash </button>
+                    </div> -->
+                </section>
+
+            </div>
+        </fieldset>
+
+        <!-- The fieldset for the telephone -->
+        <fieldset>
+            <legend> Telephone Registration </legend>
+            <!-- <div class="message">
+                This section deals with the registration of telephonethat will be used by this application in the processing of backups of the school records at the end of the term or session. 
+                <div>
+                    <ul>
+                        <li> Enter at least one email address in the input box below. </li>
+                        <li> If the school have multiple email addresses, click the add button shown to enable the entry of multiple addresses.</li>
+                        <li> If there be any reason whatsoever to do away with an address, click the trash button next to the specific email address to delete it. </li>
+                        <li> Note during back up of the school records to email, <strong> all </strong> the registered email address will be updated of the backup. On this note, therefore, if this is not desired, <i>register only those email to which the backup is desired. </i></li>
+                    </ul>
+                </div> -->
+                <div>
+                    <button id="mobile-add"> Add </button>
+                </div>
+                <section class="mobile-outer-section" id="mobile-section">
+                    <!-- <div class="mobile-input-inner-container">
+                        <input type="number" placeholder="Enter mobile no." class="mobile-input" />
+                        <button class="mobile-trash"> Trash </button>
+                    </div> -->
+                </section>
+
+            </div>
+        </fieldset>
+
+        <div>
+            <button id="save"> Save changes </button>
+        </div>
+
+
+
+        <!-- The settings for the academic scores scheme peculiar to the school-->
+        <fieldset>
+            <legend>  Academic grading system </legend>
+            <div class="instruction">
+
+                <!-- The sectipon for the score system for Ca and Exam -->
+                <section>
+                    <p> The settings below allows the settings for the total score obtainable in a particular domain of test. Here, you can set the total score obtainable in the Continuous assessment (CA) and the Examination domain. </p>
+                    <p> It should be noted that the toatl score obtainable sums to 100%. An error will be thrown if this rule is violated. </p>
+                    <p> If there is a reason why you feel the sum of the total obtainables be greater than 100%, contact the Quatron development team for a feature request </p>
+                    <div>
+                        <table>
+                            <tr>
+                                <td> Domain </td>
+                                <td> Total marks obtainable </td>
+                            </tr>
+                            <tr>
+                                <td> Continous Assessment (CA) </td>
+                                <td id="ca-container"> <input type="number" /> </td>
+                                <td> <input type="button" value="Edit" class="domain-edit" /> </td>
+                            </tr>
+                            <tr>
+                                <td> Exam  </td>
+                                <td id="exam-container"> <input type="number" /> </td>
+                                <td> <input type="button" value="Edit" class="domain-edit" /> </td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- The section for the grading scheme -->
+                <section>
+                    <p> This section allows the settings applicable for the grading system and award criteria.
+                        The default grading system can be used if not specified or set. </p>
+                        <p> Click the add button  to add a new set of grading scheme </p>
+                        <button class="add-button" id="add-grade"> Add </button>
+                        <table id="grade-table">
+                            <tr>
+                                <td> Grade </td>
+                                <td> Lower score range </td>
+                                <td> Higher score range  </td>
+                                <td> Remark  </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                </section>
+
+            </div>
+
+            <section>
+                <button id="grade-save"> Save changes </button>
+            </section>
+        </fieldset>
+
+
+        <!-- The form for the school preffered color system -->
+        <fieldset>
+            <legend> Color system (Optional) </legend>
+            <section>
+                <p>
+                    This section is an optional part for the school registration. In this section, if the school desire, select at least three color scheme associated with the school. The required color system is essentially the color scheme that is peculiar to the school, perhaps as outlined by the school's student uniform.
+                </p>
+                <p>
+                    Note that if this settings is not configured, the default color scheme of <strong> Quatron </strong> will be used. This default color system is a combination of opaque green, midnight blue and white.
+                </p>
+            </section>
+            <section>
+                <table>
+                    <tr>
+                        <td> First choice color </td>
+                        <td> <input type="color" class="color" /> </td>
+                    </tr>
+                    <tr>
+                        <td> Second choice color </td>
+                        <td> <input type="color" class="color" /> </td>
+                    </tr>
+                    <tr>
+                        <td> Third choice color </td>
+                        <td> <input type="color" class="color" /> </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <input type="button" id="color-save" value="Save changes" />
+            </section>
+        </fieldset>
+
+    </div>
+       
+    <script type="text/javascript">
+
+        var exports = {};
+        
+    </script>
+    <script type="text/javascript" src="../../renderers/school-reg-settings.js"></script>
+</body>
+</html>

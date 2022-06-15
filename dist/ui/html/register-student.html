@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Student Registration Page </title>
+    <link rel="Stylesheet" type="text/css" href="../style/register-student.css" />
+</head>
+<body>
+
+<form id="form">
+
+    <div>
+    <div class="page" id="page">
+
+        <div class="page-controller">
+            <header class="header">
+                <div class="school-title" id="title"> Divine Increase School </div>
+                <div class="motto" id="motto"> Motto: Dedicated to excellence </div>
+                <div class="address" id="address"> Address: 8, Martin's Gold street, Abule-Osho, Matogbun Road, Ogun State </div>
+                <div class="phone" id="phone"> Tel: 0703 541 3941 </div>
+            </header>
+        </div>
+
+        <!-- The container for the student registration form -->
+
+        <div class="student-registration-container">
+            <div class="student-registration-label"> Student Registration Form </div>
+
+            <!-- The settings for the registration of the students -->
+            <div style="display: flex; position: relative; flex-direction: row; justify-content: space-around; margin-top: 55px;">
+                <section>
+                    <div style="font-family: poppins; font-weight: bold; text-align: center"> Academic Year </div>
+                    <select style="margin-top: 3mm;" id="select-year">
+                        
+                    </select>
+                </section>
+
+                <section>
+                    <div style="font-family: poppins; font-weight: bold; text-align: center"> Academic Term </div>
+                    <select style="margin-top: 3mm;" id="select-term">
+                        <option> First term </option>
+                        <option> Second term </option>
+                        <option> Third term </option>
+                    </select>
+                </section>
+            </div>
+
+            <div class="passport-container" id="student-passport-container">
+                <img alt="passport" src="#" width="150" height="150" id="passport" />
+                <button class="select-passport" id="select-passport-btn" type="button"> Browse Passport... </button>
+                <input type="file" class="select-passport"  id="select-passport" style="display: none;" />
+            </div>
+
+            <!-- The container for the name-->
+            <div class="name-outer-container">
+                <section class="name name-container">
+                    <div class="title"> Student Name </div>
+                    <div class="name-inner-container">
+                        <div class="name-labels">
+                            <div> Surname </div>
+                            <div> First Name </div>
+                            <div> Middle Name </div>
+                        </div>
+                        <div class="name-input">
+                            <div> <input type="text" class="names" id="surname" required /> </div>
+                            <div> <input type="text" class="names" id="first-name" required /> </div>
+                            <div> <input type="text" class="names" id="middle-name" required /> </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- The container for the gender, date of birth and state of origin  -->
+            <div class="personal">
+                <div class="title"> Personal Details </div>
+                <!-- The section for the gender -->
+                <div class="gender-container">
+                    <div> Gender </div>
+                    <section class="gendr-section">
+                        <div>
+                            <span> <input type="radio" id="male" name="gender" class="gender-option" value="Male" required /> </span>
+                            <span> <label for="male"> Male </label></span>
+                        </div>
+
+                        <div>
+                            <span> <input type="radio" id="female" name="gender" class="gender-option" value="Female" required /> </span>
+                            <span> <label for="female"> Female </label></span>
+                        </div>
+
+                        <div>
+                            <span> <input type="radio" id="other" name="gender" class="gender-option" value="Other" required /> </span>
+                            <span> <label for="other"> Other </label></span>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- The section for the date of birth and state of origin  -->
+                <div class="dob-state-container">
+                    <!-- Date of birth -->
+                    <section>
+                        <div class="dob-label"> Date Of Birth </div>
+                        <div class="dob-input"> <input type="date" id="dob" required /> </div>
+                    </section>
+
+                    <!-- State of origin -->
+                    <section>
+                        <div  class="state-label"> State of Origin  </div>
+                        <div> 
+                            <select id="state">
+                                <option> Abia </option>
+                                <option> Adamawa </option>
+                                <option> Akwa-Ibom </option>
+                                <option> Anambra </option>
+                                <option> Bauchi </option>
+                                <option> Bayelsa </option>
+                                <option> Benue </option>
+                                <option> Borno </option>
+                                <option> Cross River </option>
+                                <option> Delta </option>
+                                <option> Ebonyi </option>
+                                <option> Edo </option>
+                                <option> Ekiti </option>
+                                <option> Enugu </option>
+                                <option> Gombe </option>
+                                <option> Imo </option>
+                                <option> Jigawa </option>
+                                <option> Kaduna </option>
+                                <option> Kano </option>
+                                <option> Kastina </option>
+                                <option> Kebbi </option>
+                                <option> Kogi </option>
+                                <option> Kwara </option>
+                                <option> Lagos </option>
+                                <option> Nasarawa </option>
+                                <option> Niger </option>
+                                <option> Ogun </option>
+                                <option> Ondo </option>
+                                <option> Osun </option>
+                                <option> Oyo </option>
+                                <option> Plateau </option>
+                                <option> Rivers </option>
+                                <option> Sokoto </option>
+                                <option> Taraba </option>
+                                <option> Yobe </option>
+                                <option> Zamfara </option>
+                                <option> FCT, Abuja </option>
+
+                            </select>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            
+            <!-- The container for the class and department -->
+            <div class="school-details">
+                <div class="title"> School Details </div>
+
+                <div class="school-details-inner-container">
+                    <div class="class-container">
+                        <div class="class label"> Class </div>
+                        <div class="select-container">
+                            <select class="select-class" id="select-class">
+                                <option> Select class </option>
+                                <option> JSS 1 </option>
+                                <option> JSS 2 </option>
+                                <option> JSS 3</option>
+                                <option> SSS 1 </option>
+                                <option> SSS 2 </option>
+                                <option> SSS 3</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="dept-container">
+                        <div class="dept label"> Department </div>
+                        <div class="select-container">
+                            <select class="select-department" id="select-department">
+                                <option class="j" id="j-default"> None </option>
+                                <option class="s" id="s-default"> Science </option>
+                                <option class="s"> Commercial </option>
+                                <option class="s"> Arts </option>
+                            </select>
+                        </div>
+                    </div>
+    
+                </div>
+
+
+                <!-- subject for junior -->
+                <div class="subject-outer-container">
+                    <div class="title"> Subjects </div>
+                    <div class="subject-inner-container">
+                        <div class="subject-section-left subject-section" id="subject-section-left">
+                            
+                        </div>
+
+                        <div class="subject-section-center subject-section" id="subject-section-center">
+                           
+                           
+                        </div>
+
+                        <div class="subject-section-right subject-section" id="subject-section-right">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        <div class="submit">
+            <div> <button id="reset-btn"> Reset </button></div>
+            <div> <button id="submit-btn" type="submit"> Submit </button> </div>
+        </div>
+
+    </div>
+    </div>
+</form>
+
+    <script> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/register-student.js"></script>
+
+</body>
+</html>

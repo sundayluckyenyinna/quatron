@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Subject management </title>
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    
+    <div class="page" style="font-family: poppins; font-size: 11pt; text-align: justify; width: 90%;">
+
+        <header>
+            <div>
+                <div> Subject management </div>
+            </div>
+        </header>
+
+        <div>
+            <div> Overview </div>
+        </div>
+
+        <div>
+            <div class="message">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nesciunt tempore? Assumenda facilis minus sunt tempore aut repudiandae nisi voluptatibus numquam similique accusamus odit dicta, earum natus nam est tempora? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta animi eum similique quasi officiis suscipit nam nisi reiciendis eligendi voluptates deserunt dignissimos eaque obcaecati possimus alias ab sapiente, commodi debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nulla hic, beatae esse quo animi dicta, facilis iste, natus nesciunt quas perspiciatis aspernatur deserunt quam? Accusantium doloremque laborum dolores reiciendis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae necessitatibus cumque molestias temporibus alias dolores? Explicabo, delectus odit deserunt iusto magni eum. Aperiam fugiat laudantium, suscipit delectus magnam ex facilis.
+            </div>
+            <div class="functions">
+                <p> The folowing are the list of actions that can be performed on this section </p>
+                <div>
+                    <ul>
+                        <li> View all students in a class offering a particular subject for a term, in a specified academic session. </li>
+                        <li> View all subjects that have been registered for a particular year in a specified academic session </li>
+                        <li> Manage students offering a particular subject. This includes removing a student from offering the subject. It should be noted however, that this particular action is irrevocable. </li>
+                        <li> Preview and generate broadsheet in PDF format for a particular subject and for a given class in a specified academic term and session. </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="folder-selection">
+                <div>
+                    <p> In other to facilitate the ease of storage of academic broadsheet, browse and select an folder. </p>
+                    <p> The folder can be selected by clicking on the browse button below, and the path of the folder will be displayed next right to the button. If there be any reason whatsoever to change the folder, click on the browse button again for a new folder selection action. </p>
+                </div>
+                <div style="position: relative; display: flex; flex-direction: row; padding-top: 30px;">
+                    <div>
+                        <button id="browse" style="width: 38mm; height: 10mm; font-family: poppins; font-weight: bold; background-color: rgb(22, 37, 37); color: white; border: solid 0.5px darkslategray; border-radius: 1mm;">Browse...</button>
+                    </div>
+                    <div>
+                        <input id="folder-path" style="width: 150mm; height: 9mm; border: solid 1px lightgrey; margin-left: 5mm; border-radius: 1mm; font-family: poppins; text-indent: 5mm; outline: hidden; background-color: transparent; visibility: hidden;" disabled />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript"> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/subject-management.js"></script>
+
+
+</body>
+</html>

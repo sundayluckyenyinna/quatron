@@ -1,0 +1,183 @@
+$left-background-color: rgb(13, 13, 49);
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url('./fonts/Poppins/Poppins-Bold.ttf');
+}
+
+select, input, button{
+    border: solid 0px transparent;
+    border-radius: 2mm;
+    outline: none;
+    cursor: pointer;
+}
+
+/** Set the defaults styling */
+:root, ::after, ::before{
+    box-sizing: border-box;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+
+body{
+    background-image: url('../img/background/homeimg3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+select, input{
+    border: solid 1px black;
+}
+
+/** Style the main container inside the page */
+.outer-container{
+    position: relative;
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+/** *Style the left part of the main container */
+.left{
+    position: relative;
+    background-color: $left-background-color;
+    width: 30%;
+    height: auto;
+    padding: 40px;
+    text-align: justify;
+    color: white;
+}
+
+.right{
+    background-color: white;
+    padding: 50px;
+    width: 70%;
+}
+
+/** style the top-right section*/
+.right-top-section{
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .register-label label {
+        position: relative;
+        font-size: 2rem;
+        font-family: poppins-bold;
+    }
+
+    .register-message{
+        position: relative;
+        font-size: 1.0rem;
+        text-align: justify;
+        padding-top: 20px;
+    }
+
+}
+
+.right-bottom-section{
+    position: relative;
+    padding-top: 40px;
+
+    .academic-year-label{
+        font-size: 1.5rem;
+        font-family: poppins-bold;
+    }
+
+    .selection-container, .description-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 15pt;
+
+        .year-label{
+            padding-top: 10px;
+        }
+
+        .select{
+            position: relative;
+            padding-top: 10px;
+            
+            .select-year{
+                position: relative;
+                height: 10mm;
+                font-size: 13pt;
+                font-family: poppins;
+                text-align: center;
+                padding-right: 3mm;
+                padding-left: 3mm;
+            }
+        }
+
+        .btn {
+            width: 60mm;
+            height: 10mm;
+            text-align: left;
+            width: 20mm;
+            font-family: poppins-bold;
+            color: white;
+            background-color: $left-background-color;
+            border: solid 0px transparent;
+            border-radius: 1mm;
+            background-image: url('../img/icons/315164_add_note_icon.png');
+            background-size: 50% 80%;
+            background-repeat: no-repeat;
+            background-position: right;
+            margin-right: 3mm;
+        }
+
+        .year-input{
+            margin-left: 30px;
+            height: 10mm;
+            text-indent: 3mm;
+            font-size: 11pt;
+            font-family: poppins;
+        }
+
+        .year-input:focus{
+            width: 40mm;
+            font-family: poppins-bold;
+        }
+
+        .btn-and-year{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding-top: 40px;
+        }
+
+    }
+
+    .description-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 50px;
+        left: 0;
+
+        .desc-box{
+            padding-left: 0px;
+            padding-top: 10px;
+            
+            .box{
+                height: 10mm;
+                width: 110mm;
+                font-size: 11pt;
+                font-family: poppins;
+                text-indent: 5mm;
+                outline: none;
+                border-radius: 2mm;
+            }
+        }
+    }
+}

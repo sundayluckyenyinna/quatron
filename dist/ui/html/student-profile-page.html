@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" type="text/css" href="../style/student-profile-page.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="page">
+        <!-- The header fro the school -->
+        <header class="header">
+            <div class="title" id="title"> Divine Increase School </div>
+            <div class="motto" id="motto"> Motto: Dedicated to excellence </div>
+            <div class="address" id="address"> Address: 8, Martin's Gold street, Abule-Osho, Matogbun Road, Ogun State </div>
+            <div class="phone" id="phone"> Tel: 0703 541 3941 </div>
+        </header>  
+        
+        <div class="passport-container">
+            <div class="passport-container-inner">
+                <img alt="passport" id="passport" class="passport" src="../img/background/homeimg2.jpg" /> 
+            </div>            
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
+            <button id="edit-button"> Edit </button>
+        </div>
+
+        <!-- The table for the personal information-->
+        <div class="table-container">
+            <table class="personal-table">
+                <tr>
+                    <td class="personal-header headers" colspan="2"> Personal Information </td>
+                </tr>
+                <tr>
+                    <td class="labels"> Surname </td> 
+                    <td id="surname" class="values"> <input type="text" value="Sunday" class="inputs" id="surname-input" /> </td>
+                </tr>
+                <tr>
+                    <td class="labels"> First name  </td> 
+                    <td id="firstname" class="values"> <input type="text" value="Sunday" class="inputs" id="firstname-input" /> </td>
+                </tr>
+                <tr>
+                    <td class="labels"> Middle name  </td> 
+                    <td id="middlename" class="values"> <input type="text" value="Sunday" class="inputs" id="middlename-input" /></td>
+                </tr>
+                <tr>
+                    <td class="labels"> Student No  </td> 
+                    <td id="student-no" class="values"> Luky</td>
+                </tr>
+                <tr>
+                    <td class="labels" class="values"> Department  </td> 
+                    <td id="dept" class="values"> <input type="text" value="Sunday" class="inputs" id="dept-input" /></td>
+                </tr>
+                <tr>
+                    <td class="labels"> Class  </td> 
+                    <td id="class" class="values"> Luky</td>
+                </tr>
+                <tr>
+                    <td class="labels"> Gender </td> 
+                    <td id="gender" class="values"> <input type="text" value="Sunday" class="inputs" id="gender-input" /> </td>
+                </tr>
+                <tr>
+                    <td class="labels"> Marital Status  </td> 
+                    <td id="marital-status" class="values"> <input type="text" value="Sunday" class="inputs" id="marital-input" /></td>
+                </tr>
+                <tr>
+                    <td class="labels"> Date of Birth </td> 
+                    <td id="dob" class="values"> <input type="text" value="Sunday" class="inputs" id="dob-input" /></td>
+                </tr>
+                <tr>
+                    <td class="labels"> Nationality </td> 
+                    <td id="nationality" class="values"> <input type="text" value="Sunday" class="inputs" id="nationality-input" /></td>
+                </tr>
+                <tr>
+                    <td class="labels"> State of Origin  </td> 
+                    <td id="state" class="values"> <input type="text" value="Sunday" class="inputs" id="state-input" /></td>
+                </tr>
+            </table>
+
+            <!-- <table class="reg-summary" id="reg-summary" border="1">
+                <tr id="reg-header" class="reg-header">
+                    <td colspan="3" class="reg-header headers"> Registration Summary </td>
+                </tr>
+                <tr>
+                    <td class="year"> Academic Year </td>
+                    <td class="term"> Term </td>
+                    <td class="sppa"> SPPA </td>
+                </tr>
+            </table> -->
+
+            <table class="subjects-table" id="subjects-table">
+                <tr class="subject-header"> 
+                    <td class="subject-headers headers" colspan="3"> Subjects Offered </td> 
+                </tr>
+                <tr>
+                    <td class="sn" style="font-weight: bold;"> S/N </td>
+                    <td class="name" style="font-weight: bold;"> Subject  </td>
+                    <td class="sub-action" style="font-weight: bold;"> Action </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div style="position: relative; display: flex; flex-direction: row; padding-top: 70px; justify-content: center;">
+        <div>
+            <button id="add-subject" onclick="document.getElementById('select-subject').style.display ='block';"> Add subject </button>
+        </div>
+        <div>
+            <select id="select-subject" style="display: none;">
+                <option> Select a registered subject </option>
+            </select>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 50px; padding-bottom: 50px;">
+        <button id="save-changes"> Save changes </button>
+    </div>
+
+
+    <script type="text/javascript"> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/student-profile-page.js"></script>
+</body>
+</html>

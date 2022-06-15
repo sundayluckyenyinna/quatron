@@ -1,0 +1,200 @@
+@font-face {
+  font-family: poppins;
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+body {
+  font-family: poppins;
+}
+
+/** Styling for the header */
+.header {
+  position: relative;
+  font-size: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 25%;
+  font-weight: bold;
+}
+
+.header .title {
+  font-family: poppins-bold;
+}
+
+.header .title, .header .motto, .header .address, .header .phone {
+  text-align: center;
+}
+
+.header .motto {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  font-family: poppins;
+}
+
+.header .address, .header .phone {
+  font-size: 0.85rem;
+  font-weight: lighter;
+  font-family: poppins;
+}
+
+.header div {
+  position: relative;
+  padding: 0.2rem;
+}
+
+.settings {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 15mm;
+}
+
+.settings select {
+  width: 70mm;
+  height: 10mm;
+  text-align: center;
+  outline: none;
+  overflow: hidden;
+  font-size: 15pt;
+  font-family: poppins;
+}
+
+.table-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: poppins;
+}
+
+.table-container .student-table {
+  position: relative;
+  margin-top: 15mm;
+  font-weight: bold;
+}
+
+.table-container .action-col {
+  position: inherit;
+  min-width: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.table-container .top-line-btn {
+  position: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.table-container .top-line-btn .edit-passport, .table-container .top-line-btn .view-student {
+  font-size: 8pt;
+  font-weight: bold;
+  font-family: poppins;
+  width: 40mm;
+  height: 8mm;
+  border-radius: 2mm;
+  background-color: #0b0b31;
+  border: solid 0 transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.table-container .top-line-btn .view-student {
+  margin-left: 20px;
+}
+
+.table-container .bottom-line-btn {
+  position: inherit;
+  margin-top: 2mm;
+}
+
+.table-container .bottom-line-btn .remove-student {
+  background-color: maroon;
+  width: 40mm;
+  height: 8mm;
+  font-size: 8pt;
+  font-weight: bold;
+  font-family: poppins;
+  color: white;
+  border: solid 0 transparent;
+  border-radius: 2mm;
+  cursor: pointer;
+}
+
+.table-container .head {
+  background-color: #0d0d3d;
+  color: white;
+}
+
+.table-container td {
+  background-color: wheat;
+  font-size: 12pt;
+  min-width: 80px;
+  text-align: center;
+  color: black;
+  height: 10mm;
+}
+
+.table-container .passport {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table-container .passport-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.table-container .desc {
+  font-size: 9pt;
+  font-family: poppins;
+}
+/*# sourceMappingURL=view-all-students.css.map */

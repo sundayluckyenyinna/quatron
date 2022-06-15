@@ -1,0 +1,363 @@
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+:root{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+select{
+    width: 50mm;
+    height: 10mm;
+    font-size: 12pt;
+    font-family: poppins;
+    padding-left: 3mm;
+    outline: none;
+    margin-left: 15px;    
+}
+
+.page-container
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page{
+    position: relative;
+    width: 80%;
+    height: 80vh;
+    margin-left: 10%;
+}
+
+div, section{
+    position: relative;
+}
+
+
+input[type=checkbox]{
+    transform: scale(2);
+    outline: none;
+    cursor: pointer;
+}
+
+/** Styling for the main form */
+.student-registration-container{
+    position: relative;
+    width: 100%;
+    padding-top: 40px;
+}
+
+
+/** Styling for the header */
+.header{
+    position: relative;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    font-weight: bold;
+    padding: 20px;
+
+    .school-title{
+        font-family: poppins-bold;
+    }
+
+    .school-title, .motto, .address, .phone {
+        text-align: center;
+    }
+
+    .motto{
+        font-size: 0.8rem;
+        font-weight: lighter;
+        font-family: poppins;
+    }
+
+    .address, .phone{
+        font-size: 0.85rem;
+        font-weight: lighter;
+        font-family: poppins;
+    }
+
+    div{
+        position: relative;
+        padding: 0.2rem
+    }
+}
+
+/** Style for the student registration label */
+.student-registration-label{
+    color: midnightblue;
+    text-align: center;
+    font-family: poppins-bold;
+    font-size: 1.5rem;
+}
+
+/**  Styling for the passport */
+.passport-container{
+    display : flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+
+    #passport{
+        display: none;
+    }
+
+    #select-passport-btn{
+        margin-top: 20px;
+        color: white;
+        background-color: rgb(15, 15, 70);
+        width: 150px;
+        height: 30px;
+        border: solid 0px transparent;
+        border-radius: 4px;
+        font-family: poppins;
+    }
+}
+
+/** Styling for the name container */
+.name-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+
+    .name-inner-container{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        font-size: 12pt;
+        font-family: poppins;
+        padding-top: 30px;
+
+        .name-labels{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100%;
+            justify-content: space-around;
+        }
+
+
+        .name-labels div{
+            padding: 19.5px;
+            padding-right: 100px;
+        }
+
+        .name-input div{
+            padding: 10px;
+        }
+        .name-input input {
+            width: 200mm;
+            height: 8mm;
+            padding: 4.5px;
+            font-size: 12pt;
+            font-family: poppins;
+            text-indent: 3mm;
+            outline: none;
+        }
+    }
+
+}
+
+
+.title{
+    font-size: 15pt;
+}
+
+/** Styling for gender */
+.personal{
+    padding-top: 50px;
+
+    .gender-container{
+        display: flex;
+        flex-direction: row;
+        font-size: 12pt;
+        font-family: poppins;
+        padding-top: 30px;
+
+        section{
+            display: flex;
+            flex-direction: row;
+            padding-left: 50px;
+    
+            div{
+                padding-left: 15px;
+            }
+
+            div span{
+                padding-left: 10px;
+            }
+        }
+    
+    }
+}
+
+
+/** Styling date of birth and state container */
+.dob-state-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 40px;
+    font-size: 12pt;
+    font-family: poppins;
+
+    section{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 50%;
+        height: 100%;
+
+        .dob-label, .state-label{
+            padding-top: 8px;
+        }
+
+        .dob-input, .state-input{
+            padding-left: 30px;
+
+            input{
+                width: 80mm;
+                height: 8mm;
+                text-indent: 3mm;
+                font-size: 11pt;
+                font-family: poppins;
+            }
+        }
+    }
+}
+
+
+/** Styling the school details */
+.school-details{
+    padding-top: 70px;
+    font-size: 13pt;
+    font-family: poppins;
+    
+    .school-details-inner-container{
+        display: flex;
+        flex-direction: row;
+        font-size: 12pt;
+        font-family: poppins;
+        padding-top: 20px;
+
+        .class-container, .dept-container{
+            display: flex;
+            flex-direction: row;
+
+            .label{
+                padding-top: 4px;
+                font-size: 13pt;
+            }
+
+            .select-container{
+                padding-left: 30px;
+            }
+
+            select {
+                width: 50mm;
+                height: 10mm;
+                font-size: 12pt;
+                font-family: poppins;
+                padding-left: 3mm;
+                outline: none;
+            }
+        }
+
+        .dept-container{
+            margin-left: 100px;
+        }
+    }
+
+}
+
+.subject-outer-container{
+
+    padding-top: 70px;
+    font-size: 13pt;
+    font-family: poppins;
+
+    .subject-inner-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+       .subject-section{
+           display: flex;
+           flex-direction: column;
+    
+           div{
+               display: flex;
+               flex-direction: row;
+               padding-top: 20px;
+               font-size: 13pt;
+               font-family: poppins;
+               align-items: center;
+               .subject-label{
+                   padding-left: 20px;
+               }
+           }
+       }
+    }
+}
+
+
+.submit{
+
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    button{
+        font-size: 13pt;
+        font-family: poppins;
+        background-color: midnightblue;
+        color: white;
+        outline: none;
+        width: 50mm;
+        height: 13mm;
+        border: solid 1px transparent;
+        border-radius: 2mm;
+        cursor: pointer;
+    }
+    
+    #reset-btn{
+        background-color: maroon;
+    }
+}
+
+
+.title{
+    font-size: 14pt;
+    font-family: poppins-bold;
+}
+
+input, select{
+    outline: none;
+}

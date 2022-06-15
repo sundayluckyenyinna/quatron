@@ -1,0 +1,172 @@
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+body{
+    font-family: poppins;
+}
+
+/** Styling for the header */
+.header{
+    position: relative;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    font-weight: bold;
+
+    .title{
+        font-family: poppins-bold;
+    }
+
+    .title, .motto, .address, .phone {
+        text-align: center;
+    }
+
+    .motto{
+        font-size: 0.8rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    .address, .phone{
+        font-size: 0.85rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    div{
+        position: relative;
+        padding: 0.2rem
+    }
+}
+
+
+.settings {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 15mm;
+
+    select{
+        width: 70mm;
+        height : 10mm;
+        text-align: center;
+        outline: none;
+        overflow: hidden;
+        font-size: 15pt;
+        font-family: poppins;
+    }
+}
+
+
+.table-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+
+    .student-table{
+        position: relative;
+        margin-top: 15mm;
+        font-weight: bold;
+    }
+
+    .action-col{
+        position: inherit;
+        min-width: 200px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .top-line-btn{
+        position: inherit;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        .edit-passport, .view-student{
+            font-size: 8pt;
+            font-weight: bold;
+            font-family: poppins;
+            width: 40mm;
+            height: 8mm;
+            border-radius: 2mm;
+            background-color: rgb(11, 11, 49);
+            border: solid 0 transparent;
+            color: white;
+            cursor: pointer;
+        }
+        .view-student{
+            margin-left: 20px;
+        }
+    }
+
+    .bottom-line-btn{
+        position: inherit;
+        margin-top: 2mm;
+
+        .remove-student{
+            background-color: maroon;
+            width: 40mm;
+            height: 8mm;
+            font-size: 8pt;
+            font-weight: bold;
+            font-family: poppins;
+            color: white;
+            border: solid 0 transparent;
+            border-radius: 2mm;
+            cursor: pointer;
+        }
+    }
+
+    .head{
+        background-color: rgb(13, 13, 61);
+        color: white;
+    }
+
+    td{
+        background-color: wheat;
+        font-size: 12pt;
+        min-width: 80px;
+        text-align : center;
+        color: black;
+        height: 10mm;
+    }
+
+    .passport{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .passport-img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .desc{
+        font-size: 9pt;
+        font-family: poppins;
+    }
+}
+
+

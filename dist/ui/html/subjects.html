@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Subject management </title>
+    <link rel="stylesheet" type="text/css" href="../style/subjects.css">
+</head>
+<body>
+    
+
+    <div class="page" id="page">
+
+
+        <!-- The container for the header -->
+        <div class="header">
+            <section class="backup-text" style="font-family: poppins;"> Subject management </section>
+            <div class="school-logo">
+                <img alt="school-logo" src="" width="100" height="100"/>
+            </div>
+        </div>
+
+        <!-- The containers for the contents -->
+        <div class="content-outer">
+            <div class="content-left navigation" id="content-left">
+                <section class="database-option">
+                    <div class="academic-session">
+                        <select id="select-year">
+                            <option> Select academic session </option>
+                            <option> 2022 </option>
+                            <option> 2023 </option>
+                        </select>
+                    </div>
+                    <div class="academic-term">
+                        <select id="select-term">
+                            <option> Select academic term </option>
+                            <option> First term </option>
+                            <option> Second term </option>
+                            <option> Third term </option>
+                        </select>
+                    </div>
+                </section>
+                <section class="overview">
+                    <div> <img alt="icon" src="" width="20" height="20" /> </div>
+                    <div> Overview </div>
+                </section>
+                <section class="options-container">
+                    <div class="options-text"> View options </div>
+                    <div class="email option">
+                        <div> <img alt="icon" src="" width="20" height="20" /> </div> 
+                        <div id="junior-subjects"> Junior subjects </div>
+                    </div>
+                    <div class="drive option">  
+                        <div> <img alt="icon" src="" width="20" height="20" /> </div> 
+                        <div id="senior-subjects"> Senior subjects </div>
+                    </div>
+                    <div class="disk option">
+                        <div> <img alt="icon" src="" width="20" height="20" /> </div> 
+                        <div id="all-subjects"> All subjects </div>
+                    </div>
+
+                </section>
+            </div>
+            
+            <div class="content-right selection">
+                <div class="right-header">
+
+                </div>
+                <div style="position: relative; width: 100%;" class="right-content">
+                    <webview src="subject-management-home-page.html" style="position: relative; width:100%; height: 100%;" id="webview" nodeintegration plugins webpreferences="allowRunningInsecureContent, javascript=yes, contextIsolation=no, nodeIntegration=yes"></webview>
+                </div>
+            </div>
+
+            <!-- https://drive.google.com/drive/u/0/my-drive -->
+        </div>
+
+
+    </div>
+
+
+    <script type="text/javascript"> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/subjects.js"></script>
+    <script type="text/javascript">
+        document.getElementById('all-subjects').onclick = function(){
+            document.getElementById('webview').reload();
+        }
+    </script>
+
+</body>
+</html>

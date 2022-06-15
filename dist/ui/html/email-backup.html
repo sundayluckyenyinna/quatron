@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../style/email-backup.css">
+</head>
+<body style="position: relative; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:justify; font-family: poppins; ">
+
+
+    <div class="page" id="page" style="position: relative; width:90%; height:100%; padding-bottom: 50px; border-bottom: solid 5px lightgrey; padding-top: 30px;">
+
+        <div class="header" id="header">
+            <div class="head" style="position: relative; font-size: 20pt;font-family:poppins; font-weight:bold; text-align:center"> Email BackupBox </div>
+
+            <div class="overview" id="overview">
+                <div class="overview-text" style="font-size: 15pt; font-weight: bold; text-align: left; padding-top: 30px; padding-left: 90px;"> Overview </div>
+                <div class="backup-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ut ducimus a earum velit, deserunt odit eligendi voluptate cupiditate, quod facilis dolorem quam, mollitia libero atque ratione maxime doloribus eos!  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi dicta voluptate in deleniti pariatur explicabo sunt quam distinctio, nam laborum ad, inventore fugiat laudantium accusamus repellat, vitae quasi fuga. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet incidunt ea quasi porro atque totam! Cupiditate, perspiciatis consequatur dolorum, optio mollitia veritatis ducimus minus voluptatibus recusandae enim doloremque aperiam. Rem.
+
+                    <p> The following are the list of data files that this page is designed to back up. </p>
+
+                    <ul style="padding-top: 10px; line-height: 10mm; color: midnightblue; font-weight: bold; width: 270px; height: auto;">
+                        <li> Academic term database file </li>
+                        <li> Academic session database file </li>
+                        <li> Academic report sheet file </li>
+                        <li> Academic broadsheet file </li>
+                        <li style="width: 500px;"> Academic score files ( PDFs, Word Document and Excel files ) </li>
+                        <li style="width: 700px;"> Other academic items such as important school records, past exam questions etc., </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- The section for the content -->
+
+        <div class="academic-database-term">
+            <div class="backup-header"> Backup academic term database </div>
+            <section class="backup-note">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat quia itaque qui ad quidem optio, unde, fugiat temporibus non consequuntur a, rerum rem? Possimus quisquam enim quibusdam eligendi earum.
+            </section>
+
+            <section class="inputs">
+                
+                <div class="select-container">
+                    <div> Academic session </div>
+                    <div>
+                        <select id="select-year-database" class="select-year">
+                            <option> Select academic session </option>
+                        </select>
+                    </div>
+                </div> 
+
+                <div style="margin-left: 30mm;">
+                    <div> Academic term </div>
+                    <div>
+                        <select id="select-term-database">
+                            <option> Select academic term </option>
+                            <option> First term </option>
+                            <option> Second term </option>
+                            <option> Third term </option>
+                        </select>
+                    </div>
+                </div> 
+
+            </section>
+
+            <div> <button class="backup-btn" id="academic-term-database-backup"> Backup </button></div>
+
+        </div>
+
+        <!-- Backup academic session -->
+        <div class="academic-database-session">
+            <div class="backup-header"> Backup academic session database </div>
+            <section class="backup-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat quia itaque qui ad quidem optio, unde, fugiat temporibus non consequuntur a, rerum rem? Possimus quisquam enim quibusdam eligendi earum.
+            </section>
+
+            <section class="inputs">
+
+                <div>
+                    <div> Academic session </div>
+                    <div>
+                        <select id="select-year-session-database" class="select-year">
+                            <option> Select academic session </option>
+                        </select>
+                    </div>
+                </div> 
+            
+            </section>
+
+            <div> <button class="backup-btn" id="academic-session-database-backup"> Backup </button></div>
+
+        </div>
+
+        <!-- Backup report sheets -->
+        <div class="report-sheet">
+            <div class="backup-header"> Backup academic report sheets </div>
+            <section class="backup-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat quia itaque qui ad quidem optio, unde, fugiat temporibus non consequuntur a, rerum rem? Possimus quisquam enim quibusdam eligendi earum.
+            </section>
+
+            <section class="inputs">
+                <div class="academic-year">
+                    <div> Academic year </div>
+                    <select id="select-year-reportsheet-backup" class="select-year">
+                        <option> Select academic year </option>
+                    </select>
+                </div>
+                <div style="margin-left: 30mm;">
+                    <div> Academic term </div>
+                    <select id="select-term-reportsheet-backup" class="select-term">
+                        <option> Select academic term </option>
+                        <option> First term </option>
+                        <option> Second term </option>
+                        <option> Third term </option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="inputs">
+                <div> <input type="text" id="reportsheet-input" disabled /> </div>
+                <div> <button class="browse" id="reportsheet-browsebtn"> Browse... </button> </div>
+            </section>
+
+            <div> <button class="backup-btn" id="academic-report-backup"> Backup </button> </div>
+        </div>
+
+        <!-- Backup broad sheets -->
+        <div class="broad-sheet">
+            <div class="backup-header"> Backup academic broad sheets </div>
+            <section class="backup-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat quia itaque qui ad quidem optio, unde, fugiat temporibus non consequuntur a, rerum rem? Possimus quisquam enim quibusdam eligendi earum.
+            </section>
+
+            <section class="inputs">
+                <div class="academic-year">
+                    <div> Academic year </div>
+                    <select class="select-year" id="select-year-broadsheet-backup">
+                        <option> Select academic year </option>
+                    </select>
+                </div>
+                <div>
+                    <div style="margin-left: 30mm;"> Academic term </div>
+                    <select id="select-term-broadsheet-backup">
+                        <option> Select academic term </option>
+                        <option> First term </option>
+                        <option> Second term </option>
+                        <option> Third term </option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="inputs">
+                <div> <input type="text" disabled id="broadsheet-input" /> </div>
+                <div> <button class="browse"> Browse... </button> </div>
+            </section>
+
+            <div> <button class="backup-btn" id="backup-broadsheet"> Backup </button> </div>
+        </div>
+
+        <!-- Backup scores -->
+        <div class="scores">
+            <div class="backup-header"> Backup scores </div>
+            <section class="backup-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat quia itaque qui ad quidem optio, unde, fugiat temporibus non consequuntur a, rerum rem? Possimus quisquam enim quibusdam eligendi earum.
+            </section>
+
+            <section class="inputs">
+                <div class="academic-year">
+                    <div> Academic year </div>
+                    <select class="select-year" id="broadsheet-input">
+                        <option> Select academic year </option>
+                    </select>
+                </div>
+                <div style="margin-left: 30mm;">
+                    <div> Academic term </div>
+                    <select id="select-term-score-backup">
+                        <option> Select academic term </option>
+                        <option> First term </option>
+                        <option> Second term </option>
+                        <option> Third term </option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="inputs">
+                <div> <input type="text" disabled id="scores-input" /> </div>
+                <div> <button class="browse"> Browse... </button> </div>
+            </section>
+
+            <div> <button class="backup-btn" id="backup-scores"> Backup </button> </div>
+        </div>
+
+        <!-- Other item backup e.g exam questions -->
+        <div class="others">
+            <div class="backup-header"> Backup other items  </div>
+            <section class="backup-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quaerat quia itaque qui ad quidem optio, unde, fugiat temporibus non consequuntur a, rerum rem? Possimus quisquam enim quibusdam eligendi earum.
+            </section>
+
+            <section class="inputs">
+                <div class="academic-year">
+                    <div> Academic year </div>
+                    <select class="select-year" id="select-year-other-backup">
+                        <option> Select academic year </option>
+                    </select>
+                </div>
+                <div style="margin-left: 30mm;">
+                    <div> Academic term </div>
+                    <select id="select-term-other-backup">
+                        <option> Select academic term </option>
+                        <option> First term </option>
+                        <option> Second term </option>
+                        <option> Third term </option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="inputs">
+                <div> <input type="text" disabled id="other-desc" placeholder="Enter a description for this item" /> </div>
+                <div> <input type="text" disabled id="other-input" /> </div>
+                <div> <button class="browse"> Browse... </button> </div>
+            </section>
+
+            <div> <button class="backup-btn" id="backup-other-items"> Backup </button> </div>
+        </div>
+
+    </div>
+
+    <!-- <img width="100" height="100"  src="../img/icons/loading1.gif"/> -->
+
+
+    <script> var exports = {} </script>
+    <script type="text/javascript">
+        const s = document.scripts.length;
+            console.log( s);
+        
+    </script>
+
+    <script type="text/javascript"  src="../../renderers/email-backup.js"></script>
+
+
+
+</body>
+</html>

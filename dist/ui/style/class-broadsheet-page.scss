@@ -1,0 +1,67 @@
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url('./fonts/Poppins/Poppins-Bold.ttf');
+}
+
+:root{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    // right: 10px;
+}
+
+.page{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    height: 100%;
+    background-color: gray;
+
+    .selection{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        justify-content: flex-end;
+        top: 0;
+        right: 0;
+        z-index: 1;
+
+        .select{
+            width:50mm;
+            height: 8mm;
+            padding-left: 2mm;
+            padding-top: 2mm;
+            padding-bottom: 2mm;
+            outline: hidden;
+            overflow: hidden;
+            border: solid 0px transparent;
+            font-family: poppins;
+            margin-top: 2mm;
+            margin-right: 2mm;
+            border-radius: 0.5mm;
+        }
+    }
+
+    .content{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+

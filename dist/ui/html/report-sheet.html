@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body style="display: flex; justify-content: center; align-items: center; background-color: grey;">
+    
+    <div class="page" id="page" style="background-color: white; position: relative; width: 210mm; height: 287mm;">
+        <!-- The header of the report sheet -->
+        <header style="position: relative; width: 100%; padding-top: 5mm;">
+            <div style="text-align: center;font-family: poppins; font-size: 20pt; font-weight: bold; color: green; word-spacing: 0.5mm;"> Divine Increase School </div>
+            <div id="motto" style="text-align: center; font-family: poppins; font-size: 8pt; font-style: italic;"> Motto : Dedicated to excellence </div>
+            <div id="title" style="text-align: center; font-family: poppins; font-weight: bolder; padding-top: 3mm;"> Academic Report Sheet </div>
+            <div style="text-align: center; font-family: poppins; font-weight: bolder; padding-top: 2mm;"> <span id="term"> Second Term </span> <span id="year"> 2022/2023 </span> <span style=" font-family: poppins;"> Session </span></div>
+        </header>
+
+        <!-- The student information table for the report sheet -->
+        <div style="position: relative; display: flex; flex-direction: row; justify-content: center; padding-top: 5mm; width: auto; height: 100px;">
+            <!-- The student name-->
+            <div style="position: relative; display: flex; justify-content: center;align-items: center; flex-direction: column; border: solid 1px lightgray; border-right: 0px transparent; min-width: 150px; font-family: poppins; font-weight: bold; width: inherit; height: 100%; font-size: 10pt;">
+                <div id="surname"> SUNDAY </div>
+                <div id="othernames" style="padding:10px; word-spacing: 2mm;"> OLUWATISEMILORE OLUWATOBILOBA </div>
+            </div>
+
+            <!-- The student personal and school information-->
+            <table id="student-table" style="font-family: poppins; border-collapse: collapse; font-size: 9pt; position: relative; width: inherit; height: 100%;">
+                <tr>
+                    <td style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Class : <span id="class"></span> </td>
+                    <td  style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Student No. : <span id="student-no"></span> </td>
+                </tr>
+                <tr>
+                    <td  style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Department : <span id="department"></span> </td>
+                    <td  style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Nationality: <span id="nationality"> </span> </td>
+                </tr>
+                <tr>
+                    <td  style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Gender: <span id="gender"></span> </td>
+                    <td  style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Origin: <span id="origin"> </span> </td>
+                </tr>
+                <tr>
+                    <td  style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Next term begins: <span id="next-term-begin"> </span> </td>
+                    <td  style="border: solid 1px lightgrey; border-collapse: collapse; padding: 0 10px 0 10px;"> Next term ends: <span id="next-term-end"></span> </td>
+                </tr>
+            </table>
+
+            <!-- The student passport photo -->
+            <div style="position: relative; border: solid 1px lightgrey; border-left: 0px transparent; display: flex; justify-content: center; align-items: center; overflow: hidden; width: 100px; height: 98%;">
+                <img alt="passport" src="../img/icons/Capture.PNG" style="width: 100%; height: 100%; flex-shrink: 0; position: relative;" id="passport" />
+            </div>
+
+        </div>
+
+        <!-- The subject table -->
+        <div style="position: relative; width: 100%; display: flex; justify-content: center; padding-top: 5mm;">
+            <table id="subject-table" style="font-family: poppins; text-align: center; font-size: 10pt; border-collapse: collapse; font-weight: bold;">
+                <tr style="font-size: 10pt;">
+                    <td style="min-width: 40px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 68, 2); color: white; font-weight: bold;"> S/N </td>
+                    <td style="min-width: 230px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 68, 2); color: white; font-weight: bold;"> SUBJECTS </td>
+                    <td style="min-width: 80px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 68, 2); color: white; font-weight: bold;"> CA (40%) </td>
+                    <td style="min-width: 95px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 68, 2); color: white; font-weight: bold;"> EXAM (60%) </td>
+                    <td style="min-width: 60px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 68, 2); color: white; font-weight: bold;"> TOTAL </td>
+                    <td style="min-width: 50px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 68, 2); color: white; font-weight: bold;"> GRADE </td>
+                    <td style="min-width: 80px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 68, 2); color: white; font-weight: bold;"> REMARKS </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <!-- The container for the average score -->
+        <div style="text-align: center; font-family: poppins; font-weight: bold; padding-top: 5mm;"> <span> Average score : </span> <span id="average-score" style="font-family: poppins; font-weight: bold;"> 0.00 % </span> </div>
+
+        <!-- The container for the psychomotors-->
+        <div style="position: relative; display: flex; flex-direction: row; justify-content: space-around; font-family: poppins; font-size: 9pt; padding-top: 5mm;">
+            <div class="psycho-left">
+                <table id="pyschomotor-table-left" style="border-collapse: collapse; font-size: 9pt;">
+                    <tr style="font-size: 9pt;">
+                        <td style="font-weight: bold; padding: 0 10px 0 10px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 77, 2); color: white; font-weight: bold;"> BEHAVIOURAL TRAITS/PSYCHOMOTOR </td>
+                        <td style="font-weight: bold; padding: 0 10px 0 10px; border: solid 1px lightgrey; border-collapse: collapse; background-color: rgb(2, 77, 2); color: white; font-weight: bold;"> GRADE </td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"> Neatness </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"> Self control </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"> Relationship with other students </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;" > Obedience </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"> Punctuality </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"> Attentiveness </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"> Spirit of co-operation </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr>
+                    <!-- <tr style="font-size: 9pt;">
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"> Spirit of co-operation </td>
+                        <td style="padding: 0 10px 0 10px; border: solid 1px lightgrey;"></td>
+                    </tr> -->
+
+                </table>
+            </div>
+
+            <div class="psycho-right">
+                <div style="text-align: center; border: solid 1px lightgrey; border-bottom: transparent; font-weight: bolder; color: white; background-color: rgb(4, 75, 4);"> KEY TO PSYCHOMOTOR </div>
+                <table style="border-collapse: collapse; font-size: 9pt;">
+                    <tr style="font-size: 9pt;">
+                        <td style="font-weight: bold; text-align: center; padding: 0 10px 0 10px;border: solid 1px lightgrey;font-weight: bolder; color: white; background-color: rgb(4, 75, 4);"> GRADE </td>
+                        <td style="font-weight: bold; text-align:center; border: solid 1px lightgrey; font-weight: bolder; color: white; background-color: rgb(4, 75, 4);"> REMARKS </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; border: solid 1px lightgrey;"> A </td>
+                        <td style="text-align: center; border: solid 1px lightgrey; padding: 0 10px 0 10px;"> Excellent show of traits </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; border: solid 1px lightgrey;"> B </td>
+                        <td style="text-align: center; border: solid 1px lightgrey; padding: 0 10px 0 10px;"> High level exhibition of traits </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; border: solid 1px lightgrey;"> C </td>
+                        <td style="text-align: center; border: solid 1px lightgrey; padding: 0 10px 0 10px;"> Good exhibition of traits </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; border: solid 1px lightgrey;"> D </td>
+                        <td style="text-align: center; border: solid 1px lightgrey; padding: 0 10px 0 10px;"> Fair exhibition of traits </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; border: solid 1px lightgrey;"> E </td>
+                        <td style="text-align: center; border: solid 1px lightgrey; padding: 0 10px 0 10px;"> Minimal exhibition show of traits </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; border: solid 1px lightgrey;"> F </td>
+                        <td style="text-align: center; border: solid 1px lightgrey; padding: 0 10px 0 10px;"> Poor exhibition of traits </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- the general reports and comment -->
+        <div style="position: relative; display: flex; justify-content: center; flex-direction: column; padding-top: 5mm; font-family: poppins; align-items: center;">
+            <div style="text-align: center; background-color: rgb(2, 56, 2); color: white; width: 90%; font-size: 10pt;"> GENERAL REMARKS AND COMMENTS </div> 
+            <!-- <div style="position: relative; display: flex; justify-content: center;"> -->
+                <table style="position: relative; width: 90%; border-collapse: collapse;">
+                    <tr style="font-size: 9pt;">
+                    <td style="text-align: left; border: solid 1px lightgrey; padding: 3px 10px 3px 10px;"> Class teacher remarks </td>
+                    <td id="class-teacher-comment" style="min-width: 400px; text-align: left; border: solid 1px lightgrey; padding: 3px 10px 3px 10px;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="text-align: left; border: solid 1px lightgrey; padding: 3px 10px 3px 10px;"> Head teacher remarks </td>
+                        <td id="head-teacher-remarks" style="min-width: 400px; text-align: left; border: solid 1px lightgrey; padding: 3px 10px 3px 10px;"></td>
+                    </tr>
+                    <tr style="font-size: 9pt;">
+                        <td style="text-align: left; border: solid 1px lightgrey; padding: 3px 10px 3px 10px;"> Principal remarks </td>
+                        <td id="principal-remarks" style="min-width: 400px; text-align: left; border: solid 1px lightgrey; padding: 3px 10px 3px 10px;"></td>
+                    </tr>
+                </table>
+            <!-- </div> -->
+        </div>
+
+        <!-- The section for the signatures -->
+        <div style="position: relative; display: flex; flex-direction: row; justify-content: space-between; padding-top: 13mm; font-family: poppins; font-size: 10pt;">
+            <div style="text-align: center; position: inherit; padding-left: 10mm;">
+                <hr  style="width: 50mm;"/>
+                <div style="font-weight: bold; font-size: 7pt;"> Teacher's signature </div>
+            </div>
+            <div style="font-size: 9pt;"> Date generated : <span id="date-generated"> 22 Jan. 2022 </span> </div>
+            <div style="text-align: center; padding-right: 10mm;">
+                <hr style="width: 50mm;"/>
+                <div style="font-weight: bold; font-size: 7pt;"> Principal's signature & stamp </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <script type="text/javascript"> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/report-sheet.js"></script>
+</body>
+</html>

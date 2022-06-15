@@ -1,0 +1,446 @@
+@font-face {
+  font-family: poppins;
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+:root {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+select {
+  width: 50mm;
+  height: 10mm;
+  font-size: 12pt;
+  font-family: poppins;
+  padding-left: 3mm;
+  outline: none;
+  margin-left: 15px;
+}
+
+.page-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page {
+  position: relative;
+  width: 80%;
+  height: 80vh;
+  margin-left: 10%;
+}
+
+div, section {
+  position: relative;
+}
+
+input[type=checkbox] {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  outline: none;
+  cursor: pointer;
+}
+
+/** Styling for the main form */
+.student-registration-container {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+}
+
+/** Styling for the header */
+.header {
+  position: relative;
+  font-size: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 25%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.header .school-title {
+  font-family: poppins-bold;
+}
+
+.header .school-title, .header .motto, .header .address, .header .phone {
+  text-align: center;
+}
+
+.header .motto {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  font-family: poppins;
+}
+
+.header .address, .header .phone {
+  font-size: 0.85rem;
+  font-weight: lighter;
+  font-family: poppins;
+}
+
+.header div {
+  position: relative;
+  padding: 0.2rem;
+}
+
+/** Style for the student registration label */
+.student-registration-label {
+  color: midnightblue;
+  text-align: center;
+  font-family: poppins-bold;
+  font-size: 1.5rem;
+}
+
+/**  Styling for the passport */
+.passport-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  padding-top: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.passport-container #passport {
+  display: none;
+}
+
+.passport-container #select-passport-btn {
+  margin-top: 20px;
+  color: white;
+  background-color: #0f0f46;
+  width: 150px;
+  height: 30px;
+  border: solid 0px transparent;
+  border-radius: 4px;
+  font-family: poppins;
+}
+
+/** Styling for the name container */
+.name-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 50px;
+}
+
+.name-container .name-inner-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 12pt;
+  font-family: poppins;
+  padding-top: 30px;
+}
+
+.name-container .name-inner-container .name-labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.name-container .name-inner-container .name-labels div {
+  padding: 19.5px;
+  padding-right: 100px;
+}
+
+.name-container .name-inner-container .name-input div {
+  padding: 10px;
+}
+
+.name-container .name-inner-container .name-input input {
+  width: 200mm;
+  height: 8mm;
+  padding: 4.5px;
+  font-size: 12pt;
+  font-family: poppins;
+  text-indent: 3mm;
+  outline: none;
+}
+
+.title {
+  font-size: 15pt;
+}
+
+/** Styling for gender */
+.personal {
+  padding-top: 50px;
+}
+
+.personal .gender-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 12pt;
+  font-family: poppins;
+  padding-top: 30px;
+}
+
+.personal .gender-container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-left: 50px;
+}
+
+.personal .gender-container section div {
+  padding-left: 15px;
+}
+
+.personal .gender-container section div span {
+  padding-left: 10px;
+}
+
+/** Styling date of birth and state container */
+.dob-state-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 40px;
+  font-size: 12pt;
+  font-family: poppins;
+}
+
+.dob-state-container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.dob-state-container section .dob-label, .dob-state-container section .state-label {
+  padding-top: 8px;
+}
+
+.dob-state-container section .dob-input, .dob-state-container section .state-input {
+  padding-left: 30px;
+}
+
+.dob-state-container section .dob-input input, .dob-state-container section .state-input input {
+  width: 80mm;
+  height: 8mm;
+  text-indent: 3mm;
+  font-size: 11pt;
+  font-family: poppins;
+}
+
+/** Styling the school details */
+.school-details {
+  padding-top: 70px;
+  font-size: 13pt;
+  font-family: poppins;
+}
+
+.school-details .school-details-inner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 12pt;
+  font-family: poppins;
+  padding-top: 20px;
+}
+
+.school-details .school-details-inner-container .class-container, .school-details .school-details-inner-container .dept-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.school-details .school-details-inner-container .class-container .label, .school-details .school-details-inner-container .dept-container .label {
+  padding-top: 4px;
+  font-size: 13pt;
+}
+
+.school-details .school-details-inner-container .class-container .select-container, .school-details .school-details-inner-container .dept-container .select-container {
+  padding-left: 30px;
+}
+
+.school-details .school-details-inner-container .class-container select, .school-details .school-details-inner-container .dept-container select {
+  width: 50mm;
+  height: 10mm;
+  font-size: 12pt;
+  font-family: poppins;
+  padding-left: 3mm;
+  outline: none;
+}
+
+.school-details .school-details-inner-container .dept-container {
+  margin-left: 100px;
+}
+
+.subject-outer-container {
+  padding-top: 70px;
+  font-size: 13pt;
+  font-family: poppins;
+}
+
+.subject-outer-container .subject-inner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.subject-outer-container .subject-inner-container .subject-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.subject-outer-container .subject-inner-container .subject-section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 20px;
+  font-size: 13pt;
+  font-family: poppins;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.subject-outer-container .subject-inner-container .subject-section div .subject-label {
+  padding-left: 20px;
+}
+
+.submit {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.submit button {
+  font-size: 13pt;
+  font-family: poppins;
+  background-color: midnightblue;
+  color: white;
+  outline: none;
+  width: 50mm;
+  height: 13mm;
+  border: solid 1px transparent;
+  border-radius: 2mm;
+  cursor: pointer;
+}
+
+.submit #reset-btn {
+  background-color: maroon;
+}
+
+.title {
+  font-size: 14pt;
+  font-family: poppins-bold;
+}
+
+input, select {
+  outline: none;
+}
+/*# sourceMappingURL=register-student.css.map */

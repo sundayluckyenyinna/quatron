@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Broad sheet </title>
+    <!-- <link rel="Stylesheet" type="text/css" href="../style/class-broadsheet-page.css" /> -->
+</head>
+<body>
+    
+    <!-- This is the page that will be printed as a broadsheet for a particular subject. -->
+    <div class="page" id="page" style="position: relative; display:flex; flex-direction:column; width:99%;justify-content: center; align-items: center;">
+
+        <!-- The header of the report sheet -->
+        <header style="position: relative; width: 100%; padding-top: 5mm;">
+            <div style="text-align: center;font-family: poppins; font-size: 20pt; font-weight: bold; color: green; word-spacing: 0.5mm;"> Divine Increase School </div>
+            <div id="motto" style="text-align: center; font-family: poppins; font-size: 8pt; font-style: italic;"> Motto : Dedicated to excellence </div>
+            <div id="title" style="text-align: center; font-family: poppins; font-weight: bolder; padding-top: 3mm;"> Academic Broadsheet </div>
+            <div style="text-align: center; font-family: poppins; font-weight: bolder; padding-top: 2mm;"> <span id="term"> Second Term </span> <span id="year"> 2022/2023 </span> <span style=" font-family: poppins;"> Session </span></div>
+        </header>
+
+        <div style="position: relative; display:flex; flex-direction:row; justify-content:space-between; align-items:center; width:100%; padding-top: 30px;">
+            <div style="position: relative; margin-left:10%; font-weight: bold; font-family: poppins;">
+                <label style="font-size: 12pt; font-family:poppins"> Class: </label>
+                <span id="class"> </span>
+            </div>
+            <div style="position: relative; margin-right:10%; font-weight: bold; font-family: poppins;">
+                <label style="font-size: 12pt; font-family:poppins"> Subject: </label>
+                <span id="subject"> </span>
+            </div>
+        </div>
+
+        <div class="score-table-container container" style="padding-top: 30px; position:relative; width:98%; display:flex; flex-direction:row; justify-content:center; align-items:center;">
+            <table class="score-table" id="score-table" border="1" style="font-family: poppins; max-width: 750px;">
+                <tr>
+                    <td style="padding-left: 10px; padding-right:10px; text-align: center; font-weight: bold;"> S/N </td>
+                    <td style="min-width: 100px; text-align: center; font-weight: bold;"> Student No </td>
+                    <td style="min-width: 350px; text-align: center; font-weight: bold;"> Student Full Name </td>
+                    <td style="min-width: 50px; text-align: center; font-weight: bold;"> CA </td>
+                    <td style="min-width: 50px; text-align: center; font-weight: bold;"> Exam </td>
+                    <td style="min-width: 50px; text-align: center; font-weight: bold;"> Total </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+    <div style="position: relative; width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; padding-top: 20px;">
+        <button id="print" style="width:30mm; background-color:rgb(35, 59, 59); color: white; font-family: poppins;text-align: center; height: 8mm; border: solid 0.5px darkslategray; font-size: 10pt; font-weight: bold; border-radius: 1mm;"> Print </button>
+        
+    </div>
+
+    <script type="text/javascript">  var exports = {}; </script>
+    <script type="text/javascript" src="../../renderers/broadsheet.js"></script>
+
+</body>
+</html>

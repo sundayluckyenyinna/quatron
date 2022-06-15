@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="font-family: constantia;">  Score document error page </title>
+    <link rel="Stylesheet" type="text/css" href="../style/invalid-row.css" />
+</head>
+<body>
+    <p style="display: none;" id="dark-mode-para"> <button id="dark-mode"> <img src="../img/icons/dark-mode.png" width="10" height="10" /></button></p>
+
+    <h1 style="text-align: center; font-weight: bold; font-family: Bookman old style; color: maroon;"> Warning! </h1>
+
+    <div id="error-component"></div>
+
+    <div class="buttons" style="position: relative; display: flex; flex-direction: row; justify-content: space-between; padding: 30px;">
+        <button id="continue" style="border: solid 0 transparent; background-color: blue; color: white; width: 50mm; height: 8mm; font-weight: bold; font-family: Bookman old style; cursor: pointer;"> Continue anyways </button>
+        <button id="stop" style="border: solid 0 transparent; background-color: maroon; color: white; width: 50mm; height: 8mm; font-weight: bold; font-family: Bookman old style; cursor: pointer; text-align: center;"> Cancel </button>
+    </div>
+
+
+    <script type="text/javascript"> var exports = {} </script>
+    <script type="text/javascript" src="../../renderers/invalid-rows.js"></script>
+    <script type="text/javascript">
+        document.body.classList.toggle('dark-mode');
+        document.getElementById('dark-mode-para').style.display = 'block';
+        document.getElementById('dark-mode').onclick = function(){
+            document.body.classList.toggle('dark-mode');
+            document.getElementById('dark-mode').style.backgroundColor = 'wheat';
+            document.getElementById('continue').style.backgroundColor = 'blue';
+            if(!document.body.classList.contains('dark-mode')){
+                document.getElementById('continue').style.backgroundColor = 'rgb(9, 9, 49)'
+            }
+        };
+    </script>
+</body>
+</html>

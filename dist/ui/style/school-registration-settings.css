@@ -1,0 +1,82 @@
+@font-face {
+  font-family: poppins;
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: poppins-bold;
+  src: url("./fonts/Poppins/Poppins-Bold.ttf");
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: poppins;
+  font-size: 10pt;
+}
+
+.page {
+  position: relative;
+  width: 80%;
+  height: auto;
+}
+
+.school-section, .email-input-inner-container, .mobile-input-inner-container {
+  position: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.school-input {
+  margin-left: 20px;
+}
+
+.school-label {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.school-input, .email-input, .mobile-input {
+  width: 200mm;
+  height: 10mm;
+  border: solid 0.5px lightgray;
+  border-radius: 1mm;
+  font-family: poppins;
+  text-indent: 5mm;
+  margin-left: 30px;
+  background-color: transparent;
+}
+
+.small-label {
+  margin-left: 45px;
+}
+
+legend {
+  font-family: poppins;
+  font-size: 15pt;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+fieldset {
+  position: inherit;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 40px;
+  border: solid 0.5px lightgray;
+  text-align: left;
+}
+/*# sourceMappingURL=school-registration-settings.css.map */

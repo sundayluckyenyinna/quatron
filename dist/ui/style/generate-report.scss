@@ -1,0 +1,85 @@
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url('./fonts/Poppins/Poppins-Bold.ttf');
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/background/homeimg3.jpg');
+    // background-color: green;
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+}
+
+select, input, button{
+    border: solid 0px transparent;
+    border-radius: 2mm;
+    outline: none;
+    cursor: pointer;
+}
+
+select{
+    height: 10mm;
+    position: relative;
+    width: 50mm;
+    text-align: center;
+    font-size: 11pt;
+    font-family: poppins;
+    margin-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+select, input{
+    border: solid 1px black;
+}
+
+/** Set the defaults styling */
+:root, ::after, ::before{
+    box-sizing: border-box;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+/** Style the page */
+.page{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    font-family: poppins;
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5mm;
+}
+
+div{
+    position: relative;
+}
+
+.left{
+    width: 30%;
+    background-color: rgb(10, 10, 39);
+    height: auto;
+    color: whitesmoke;
+    text-align: justify;
+    display: none;
+}
+
+.right{
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 50px;
+
+}

@@ -1,0 +1,227 @@
+
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+body{
+    font-family: poppins;
+}
+
+/** Styling for the header */
+.header{
+    position: relative;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    font-weight: bold;
+
+    .title{
+        font-family: poppins-bold;
+    }
+
+    .title, .motto, .address, .phone {
+        text-align: center;
+    }
+
+    .motto{
+        font-size: 0.8rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    .address, .phone{
+        font-size: 0.85rem;
+        font-weight: lighter;
+        font-family: poppins;
+
+    }
+
+    div{
+        position: relative;
+        padding: 0.2rem
+    }
+}
+
+.passport-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .passport-container-inner {
+        position: inherit;
+        text-align: center;
+        padding-top: 70px;
+        padding-bottom: 30px;
+    }
+
+    .passport {
+        width: 100px;
+        height: 100px;
+        padding-left: 60px;
+    }
+}
+
+#edit-button{
+    width: 22mm;
+    height: 8mm;
+    background-color: rgb(8, 8, 71);
+    border: 0px transparent;
+    color: white;
+    word-spacing: 5mm;
+    font-family: poppins;
+    margin-right: 10mm;
+    background-attachment: fixed;
+    position: relative;
+}
+
+
+// .table-container{
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+// }
+.headers{
+    background-color: rgb(9, 9, 43);
+    color: white;
+    font-weight: bold;
+    padding-left: 5mm;
+    padding-right: 5mm;
+    padding-top: 1mm;
+    padding-bottom: 1mm;
+}
+
+
+.table-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-table{
+    position: relative;
+    height: auto;
+
+    // tr{
+    //     background-color: wheat;
+    // }
+
+    .labels, .values, .action{
+        min-width: 70mm;
+        padding-left: 5mm;
+        padding-right: 5mm;
+        padding-top: 1mm;
+        padding-bottom: 1mm;
+        font-weight: bold;
+    }
+
+    .labels, .values{
+        background-color: wheat;
+    }
+    .values{
+        min-width: 120mm;
+        .inputs{
+            width: 100%;
+            padding: 0 0 0 0;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            border: solid 0 transparent;
+            outline: none;
+            overflow: hidden;
+            background-color: transparent;
+        }
+    }
+
+    .action{
+        min-width: 30mm;
+        // background-color: white;
+    }
+}
+
+.reg-summary{
+    position: inherit;
+    margin-top: 10mm;
+    width: 100mm;
+
+    .year{
+        min-width: 50mm;
+    }
+    .term{
+        min-width: 30mm;
+    }
+    .sppa{
+        min-width: 20mm;
+    }
+}
+
+.subjects-table{
+    position: inherit;
+    margin-top: 10mm;
+
+    .sn{
+        min-width: 12mm;
+        text-align: center;
+    }
+
+    .name{
+        min-width: 145mm;
+        text-align: left;
+        text-indent: 5mm;
+    }
+
+    .sub-action{
+        min-width: 50mm;
+        text-align: center;
+    }
+
+    .sn, .name, .sub-action{
+        border: solid 1px lightgrey;
+        border-collapse: collapse;
+    }
+}
+
+#add-subject{
+    position: relative;
+    width: 40mm;
+    height: 8mm;
+    background-color: rgb(7, 7, 43);
+    color: white;
+    border: solid 0px transparent;
+    font-family: poppins;
+    font-weight: bold;
+}
+
+#select-subject{
+    width: 140mm;
+    height: 8mm;
+    text-indent: 5mm;
+    position: relative;
+    margin-left: 5mm;
+    border: solid 0.5px rgb(16, 16, 75);
+    overflow: hidden;
+    outline: hidden;
+    font-family: poppins;
+}
+
+#save-changes{
+    position: relative;
+    width: 40mm;
+    height: 8mm;
+    background-color: rgb(1, 27, 1);
+    color: white;
+    border: solid 0px transparent;
+    font-family: poppins;
+    font-weight: bold;
+}

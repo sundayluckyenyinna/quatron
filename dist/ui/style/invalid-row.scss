@@ -1,0 +1,72 @@
+@font-face {
+    font-family: poppins;
+    src: url('./fonts/Poppins/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url('./fonts/Poppins/Poppins-Bold.ttf');
+}
+
+:root{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.error-segment {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 10pt;
+    font-family: poppins;
+
+    .row-number, .message{
+        position: relative;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: justify;
+    }
+    .row-number{
+        font-weight: bold;
+        color: wheat;
+    }
+}
+
+#dark-mode-para{
+    text-align: right;
+    position: absolute;
+    right: 0;
+    margin-bottom: 10px;
+    z-index: 1;
+};
+
+#dark-mode{
+    background-color: transparent;
+    border: solid 0 transparent;
+    position: relative;
+    margin-right: 30px;
+    cursor: pointer;
+    outline: hidden;
+    overflow: hidden;
+    background-image: url('../img/icons/dark-mode.png');
+    background-size: 100% 100%;
+    width: 10;
+    height: 10;
+    border-radius: 50%;
+}
+
+
+.dark-mode{
+    // background-color: rgb(7, 7, 34);
+    background-color: rgb(8, 8, 36);
+    color: white;
+}
