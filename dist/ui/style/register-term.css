@@ -2,12 +2,10 @@
   font-family: poppins;
   src: url("./fonts/Poppins/Poppins-Light.ttf");
 }
-
 @font-face {
   font-family: poppins-bold;
   src: url("./fonts/Poppins/Poppins-Bold.ttf");
 }
-
 select, input, button {
   border: solid 0px transparent;
   border-radius: 2mm;
@@ -17,8 +15,7 @@ select, input, button {
 
 /** Set the defaults styling */
 :root, ::after, ::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
 }
@@ -39,19 +36,14 @@ select, input {
   position: relative;
   width: 70%;
   height: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 /** *Style the left part of the main container */
 .left {
   position: relative;
-  background-color: #0d0d31;
+  background-color: rgb(13, 13, 49);
   width: 30%;
   height: auto;
   padding: 40px;
@@ -71,16 +63,14 @@ select, input {
   width: 100%;
   height: auto;
 }
-
 .right-top-section .register-label label {
   position: relative;
   font-size: 2rem;
   font-family: poppins-bold;
 }
-
 .right-top-section .register-message {
   position: relative;
-  font-size: 1.0rem;
+  font-size: 1rem;
   text-align: justify;
   padding-top: 20px;
 }
@@ -89,36 +79,24 @@ select, input {
   position: relative;
   padding-top: 40px;
 }
-
 .right-bottom-section .academic-year-label {
   font-size: 1.5rem;
   font-family: poppins-bold;
 }
-
 .right-bottom-section .selection-container, .right-bottom-section .description-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   font-size: 15pt;
 }
-
 .right-bottom-section .selection-container .year-label, .right-bottom-section .description-container .year-label {
   padding-top: 10px;
 }
-
 .right-bottom-section .selection-container .select, .right-bottom-section .description-container .select {
   position: relative;
   padding-top: 10px;
 }
-
 .right-bottom-section .selection-container .select .select-year, .right-bottom-section .description-container .select .select-year {
   position: relative;
   height: 10mm;
@@ -128,7 +106,6 @@ select, input {
   padding-right: 3mm;
   padding-left: 3mm;
 }
-
 .right-bottom-section .selection-container .btn, .right-bottom-section .description-container .btn {
   width: 60mm;
   height: 10mm;
@@ -136,7 +113,7 @@ select, input {
   width: 20mm;
   font-family: poppins-bold;
   color: white;
-  background-color: #0d0d31;
+  background-color: rgb(13, 13, 49);
   border: solid 0px transparent;
   border-radius: 1mm;
   background-image: url("../img/icons/315164_add_note_icon.png");
@@ -145,7 +122,6 @@ select, input {
   background-position: right;
   margin-right: 3mm;
 }
-
 .right-bottom-section .selection-container .year-input, .right-bottom-section .description-container .year-input {
   margin-left: 30px;
   height: 10mm;
@@ -153,45 +129,28 @@ select, input {
   font-size: 11pt;
   font-family: poppins;
 }
-
 .right-bottom-section .selection-container .year-input:focus, .right-bottom-section .description-container .year-input:focus {
   width: 40mm;
   font-family: poppins-bold;
 }
-
 .right-bottom-section .selection-container .btn-and-year, .right-bottom-section .description-container .btn-and-year {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   padding-top: 40px;
 }
-
 .right-bottom-section .description-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 50px;
   left: 0;
 }
-
 .right-bottom-section .description-container .desc-box {
   padding-left: 0px;
   padding-top: 10px;
 }
-
 .right-bottom-section .description-container .desc-box .box {
   height: 10mm;
   width: 110mm;
@@ -200,5 +159,4 @@ select, input {
   text-indent: 5mm;
   outline: none;
   border-radius: 2mm;
-}
-/*# sourceMappingURL=register-term.css.map */
+}/*# sourceMappingURL=register-term.css.map */

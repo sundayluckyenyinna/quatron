@@ -71,3 +71,56 @@ fieldset{
     border: solid 0.5px lightgray;
     text-align: left;
 }
+
+.selection{
+    position: relative;
+    padding-left: 30px;
+
+    .teacher-comment, .principal-comment{
+        padding-left: 30px;
+        padding-top: 30px;
+
+        input{
+            width: 250mm;
+            height: 9.5mm;
+            border: solid 1px lightgrey;
+            border-radius: 1mm;
+            font-family: poppins;
+            font-size: 10pt;
+            text-indent: 5mm;
+        }
+        button, #comment-save{
+            width: 30mm;
+            height: 10mm;
+            color: white;
+            background-color: midnightblue;
+            border: solid 0px transparent;
+            border-radius: 1mm;
+            font-size: 10pt;
+            font-family: poppins;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .sub-selection{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+}
+
+#comment-save{
+    width: 40mm;
+    height: 10mm;
+    color: white;
+    background-color: midnightblue;
+    border: solid 0px transparent;
+    border-radius: 1mm;
+    font-size: 10pt;
+    font-family: poppins;
+    margin-left: 60px;
+    margin-top: 30px;
+    cursor: pointer;
+}

@@ -40,8 +40,6 @@ const email_sender_1 = __importDefault(require("./google/email-sender"));
 const zip_folder_1 = __importDefault(require("./helper/zip-folder"));
 const electron_3 = require("electron");
 const grade_settings_1 = __importDefault(require("./model/grade-settings"));
-const teacher_comment_1 = __importDefault(require("./helper/teacher-comment"));
-const comment_type_1 = require("./helper/comment-type");
 // const worker = new Worker('./dist/workers/report-sheet-worker.js', { workerData : { message : 'I am good'} } );
 // worker.on('message', function(value){
 //     console.log( value );
@@ -784,6 +782,13 @@ electron_1.ipcMain.handle('show-file-chooser', function (event, file) {
         filters: [{ name: file.desc, extensions: [file.mediaType] }]
     })) === null || _a === void 0 ? void 0 : _a.pop();
 });
+electron_1.ipcMain.handle('show-file', function (event, file) {
+    var _a;
+    return (_a = electron_1.dialog.showOpenDialogSync({
+        properties: ['openFile'],
+        filters: [{ name: file.desc, extensions: file.media }]
+    })) === null || _a === void 0 ? void 0 : _a.pop();
+});
 electron_1.ipcMain.handle('all-or-single-students-data', function (event, payload) {
     return __awaiter(this, void 0, void 0, function* () {
         if (payload.studentNo === 'All students in class') {
@@ -1305,14 +1310,11 @@ electron_1.ipcMain.handle('update-grade-system', function (event, payload) {
             gradeSystemArray.push(new grade_settings_1.default(key, value.lowerScoreRange, value.higherScoreRange, value.remarks));
         });
         return yield new concrete_repository_1.default().updateGradingSystem(gradeSystemArray);
-<<<<<<< HEAD
     });
 });
 electron_1.ipcMain.handle('get-grade-system', function (event) {
     return __awaiter(this, void 0, void 0, function* () {
         return yield new concrete_repository_1.default().getGradingSystemObjectArray();
-=======
->>>>>>> a17173610b2279fb525c8e511462312290f928ab
     });
 });
 function getGradeSystem() {
@@ -1596,6 +1598,14 @@ function handleOtherItemsBackup(payload) {
         progress.close();
     });
 }
+electron_1.ipcMain.handle('save-comments', function (event, teacherPath, principalPath) {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield new concrete_repository_1.default().updateComments(teacherPath, principalPath);
+    });
+});
+electron_1.ipcMain.handle('get-file-lines', function (event, filePath) {
+    const lineString = fs_1.default.readFileSync(filePath, { encoding: 'utf-8' }).toString();
+    const withoutComment = lineString.split('@comment');
+    return withoutComment.join('').split('\r\n').filter((token) => token !== '' && token !== ' ');
+});
 // console.log( new TeacherComment().loa )
-new teacher_comment_1.default().loadComments(comment_type_1.CommentType.Teacher_Good_Behaviour, { includeDefault: false })
-    .then((data) => console.log(data));

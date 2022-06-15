@@ -113,6 +113,21 @@ class Updator {
             }
         });
     }
+    updateComments(teacherPath, principalPath) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const types = [{ com: 'teacher-comment', path: teacherPath }, { com: 'principal-comment', path: principalPath }];
+            for (const type of types) {
+                yield (yield this.getRepository().getSchoolDataDatabaseConnection()).run('UPDATE school SET Data = ? WHERE Id = ?', type.path, type.com);
+            }
+            return;
+        });
+    }
+    updateColorSystem(colors) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const changes = yield (yield (yield this.getRepository().getSchoolDataDatabaseConnection()).run('UPDATE school SET Data = ? WHERE Id = ? ', colors.join('#'), 'colors')).changes;
+            return changes;
+        });
+    }
     insertIntoGradeSystemTable(gradeSystemArray) {
         return __awaiter(this, void 0, void 0, function* () {
             for (let i = 0; i < gradeSystemArray.length; i++) {

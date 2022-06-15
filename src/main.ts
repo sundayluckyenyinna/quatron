@@ -774,6 +774,12 @@ ipcMain.handle('show-file-chooser', function( event, file : object | any ){
     })?.pop() as string;
 });
 
+ipcMain.handle('show-file', function( event, file : Object | any ){
+    return dialog.showOpenDialogSync({
+        properties : ['openFile'],
+        filters: [ { name : file.desc, extensions : file.media } ]
+    })?.pop() as string;
+});
 
 ipcMain.handle('all-or-single-students-data', async function( event, payload ){
     if(payload.studentNo === 'All students in class'){
@@ -1626,6 +1632,14 @@ async function handleOtherItemsBackup ( payload : Object | any ){
      progress.close();
 }
 
+ipcMain.handle('save-comments', async function(event, teacherPath : string, principalPath : string){
+    await new ConcreteRepository().updateComments( teacherPath, principalPath );
+});
+
+ipcMain.handle('get-file-lines', function( event, filePath ){
+    const lineString : string = fs.readFileSync( filePath, { encoding : 'utf-8' } ).toString() as string;
+    const withoutComment: string[] = lineString.split('@comment');
+    return withoutComment.join('').split('\r\n').filter((token : string) => token !== '' && token !== ' ');
+});
+
 // console.log( new TeacherComment().loa )
-new TeacherComment().loadComments( CommentType.Teacher_Good_Behaviour, { includeDefault : false })
-.then( (data : string[]) => console.log( data ));

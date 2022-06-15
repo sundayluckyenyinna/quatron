@@ -2,22 +2,18 @@
   font-family: poppins;
   src: url("./fonts/Poppins/Poppins-Light.ttf");
 }
-
 @font-face {
   font-family: poppins-bold;
   src: url("./fonts/Poppins/Poppins-Bold.ttf");
 }
-
 :root {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 *::after, *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -31,14 +27,12 @@
   font-size: 10pt;
   font-family: poppins;
 }
-
 .error-segment .row-number, .error-segment .message {
   position: relative;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: justify;
 }
-
 .error-segment .row-number {
   font-weight: bold;
   color: wheat;
@@ -68,7 +62,6 @@
 }
 
 .dark-mode {
-  background-color: #080824;
+  background-color: rgb(8, 8, 36);
   color: white;
-}
-/*# sourceMappingURL=invalid-row.css.map */
+}/*# sourceMappingURL=invalid-row.css.map */

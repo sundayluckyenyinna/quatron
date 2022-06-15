@@ -337,3 +337,108 @@ $('.color').each(function (index, element) {
     $(this).removeAttr('disabled');
 });
 populateAcademicGradeSystem();
+function getNoFileChoosenError() {
+    return {
+        message: 'Cannot save empty file. Select a file to continue. Click the Browse button below to continue.',
+        title: '  File selection error',
+        type: 'error'
+    };
+}
+function getInvalidFileExtensionError() {
+    return {
+        message: 'Cannot process file choosen. The file extension is not compatible with the required types.\n\nThe required types are PDF(.pdf), Word(.docx) or Text(.txt)',
+        title: '  Invalid file extension error',
+        type: 'error'
+    };
+}
+// Function to validate the input before submission
+function validateCommentInput() {
+    var _a, _b;
+    return __awaiter(this, void 0, void 0, function* () {
+        const validExtensions = ['.pdf', '.docx', '.txt'];
+        const teacherCommentInput = (_a = $('#teacher-input').val()) === null || _a === void 0 ? void 0 : _a.toString().trim();
+        const principalCommentInput = (_b = $('#principal-input').val()) === null || _b === void 0 ? void 0 : _b.toString().trim();
+        const teacherCommentFileExtension = teacherCommentInput.substring(teacherCommentInput.lastIndexOf('.'));
+        const principalCommentFileExtension = principalCommentInput.substring(principalCommentInput.lastIndexOf('.'));
+        let isValid = true;
+        if (teacherCommentInput.length === 0) {
+            yield electron_1.ipcRenderer.invoke('show-dialog', getNoFileChoosenError());
+            isValid = false;
+            return false;
+        }
+        if (principalCommentInput.length === 0) {
+            yield electron_1.ipcRenderer.invoke('show-dialog', getNoFileChoosenError());
+            isValid = false;
+            return false;
+        }
+        if (!validExtensions.includes(teacherCommentFileExtension)
+            || !validExtensions.includes(principalCommentFileExtension)) {
+            yield electron_1.ipcRenderer.invoke('show-dialog', getInvalidFileExtensionError());
+            isValid = false;
+        }
+        return isValid;
+    });
+}
+// function to validate the appropriacy of the file before submission to the main process
+function validateFileAppropriate(who, commentPath) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let allRight = true;
+        // call the main process to return all the lines of the file
+        const lines = yield electron_1.ipcRenderer.invoke('get-file-lines', commentPath);
+        const invalidLines = [];
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const lineNumber = i;
+            if (!line.startsWith('@comment')) {
+                invalidLines.push(lineNumber);
+            }
+            ;
+        }
+        if (invalidLines.length > 0) {
+            yield electron_1.ipcRenderer.invoke('show-dialog', {
+                message: 'Some lines of the selected files for the ' + who + 'comments ' + 'are not well formatted. Each new line of comment must start with the " @comment" annotation!\n\nThe invalid lines are: ' + invalidLines.join(', ') + `\nAdd the '@comment' annotation on each of these faulty lines and try again.`,
+                title: '  Invalid formatting of file.',
+                type: 'error'
+            });
+            allRight = false;
+            return false;
+        }
+        ;
+        return allRight;
+    });
+}
+/**
+ * Sections for the academic report sheet commenting
+ */
+// Functions for the browse button
+$('.browse').on('click', function (event) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const file = { desc: 'Files', media: ['pdf', 'docx', 'txt'] };
+        // call the ipcRenderer to show the directoryt choose 
+        const selectedFolder = yield electron_1.ipcRenderer.invoke('show-file', file);
+        //display on the input element
+        $(this).parent().parent().find('input[type=text]').first().val(selectedFolder);
+    });
+});
+$('.comment-save').on('click', function (event) {
+    var _a, _b;
+    return __awaiter(this, void 0, void 0, function* () {
+        const teacherCommentInput = (_a = $('#teacher-input').val()) === null || _a === void 0 ? void 0 : _a.toString().trim();
+        const principalCommentInput = (_b = $('#principal-input').val()) === null || _b === void 0 ? void 0 : _b.toString().trim();
+        // send to the main process to save the data in the database.
+        // const done : boolean =  await validateCommentInput();
+        // const appropriateTeacher : boolean = await validateFileAppropriate('teacher', teacherCommentInput);
+        // const appropriatePrincipal : boolean = await validateFileAppropriate('principal', principalCommentInput);
+        // tell the main process to get all the lines 
+        const teacherLines = yield electron_1.ipcRenderer.invoke('get-file-lines', teacherCommentInput);
+        const principalLines = yield electron_1.ipcRenderer.invoke('get-file-lines', principalCommentInput);
+        // tell the main process to the database
+        yield electron_1.ipcRenderer.invoke('save-comments', teacherCommentInput, principalCommentInput);
+        return;
+    });
+});
+$('#color-save').on('click', function (event) {
+    var _a, _b, _c;
+    const colors = [(_a = $('#first-color').val()) === null || _a === void 0 ? void 0 : _a.toString().trim(), (_b = $('#second-color').val()) === null || _b === void 0 ? void 0 : _b.toString().trim(), (_c = $('#third-color').val()) === null || _c === void 0 ? void 0 : _c.toString().trim()];
+    console.log(colors);
+});

@@ -152,6 +152,10 @@ export default class ConcreteRepository extends Repository
         return await this.getUpdator().updateGradingSystem( gradeSystemArray );
     }
 
+    async updateComments( teacherPath : string, principalPath : string ){
+        return await this.getUpdator().updateComments( teacherPath, principalPath );
+    }
+
     deleteStudentByStudentNo(studentNo: string): Promise<void> {
         throw new Error('Method not implemented.');
     };

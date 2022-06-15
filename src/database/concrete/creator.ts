@@ -134,7 +134,7 @@ export default class Creator
         );
 
         // insert the ids. If the table already have this ids, the program will throw an error. If this happens, just continue
-        const ids : string [] = ['name', 'motto', 'address', 'email', 'telephone', 'logo' ];
+        const ids : string [] = ['name', 'motto', 'address', 'email', 'telephone', 'logo', 'teacher-comment', 'principal-comment' ];
         
         for ( let i = 0; i < ids.length; i++ ){
             const id = (ids[i] as string).trim();

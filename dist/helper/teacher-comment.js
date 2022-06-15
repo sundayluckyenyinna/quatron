@@ -24,7 +24,8 @@ class TeacherComment extends comment_1.default {
     //Override the loadComment method to load extra from a file specified by the user.
     getTeacherGoodCommentFromExternalFile() {
         return __awaiter(this, void 0, void 0, function* () {
-            return ['addition 1', 'addition2'];
+            // The additional comments from the teacher can be loaded from either a database or from the text file
+            return [];
         });
     }
     ;

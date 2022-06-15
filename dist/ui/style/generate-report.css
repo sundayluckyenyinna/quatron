@@ -2,26 +2,15 @@
   font-family: poppins;
   src: url("./fonts/Poppins/Poppins-Light.ttf");
 }
-
 @font-face {
   font-family: poppins-bold;
   src: url("./fonts/Poppins/Poppins-Bold.ttf");
 }
-
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("../img/background/homeimg3.jpg");
   background-size: 100% 120%;
   background-repeat: no-repeat;
@@ -52,8 +41,7 @@ select, input {
 
 /** Set the defaults styling */
 :root, ::after, ::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
 }
@@ -64,21 +52,11 @@ select, input {
   width: 90%;
   height: 100%;
   font-family: poppins;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  align-items: center;
   margin-top: 5mm;
 }
 
@@ -88,7 +66,7 @@ div {
 
 .left {
   width: 30%;
-  background-color: #0a0a27;
+  background-color: rgb(10, 10, 39);
   height: auto;
   color: whitesmoke;
   text-align: justify;
@@ -99,5 +77,4 @@ div {
   width: 100%;
   padding-left: 40px;
   padding-right: 50px;
-}
-/*# sourceMappingURL=generate-report.css.map */
+}/*# sourceMappingURL=generate-report.css.map */

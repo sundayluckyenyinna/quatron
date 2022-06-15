@@ -2,12 +2,10 @@
   font-family: poppins;
   src: url("./fonts/Poppins/Poppins-Light.ttf");
 }
-
 @font-face {
   font-family: poppins-bold;
   src: url(./fonts/Poppins/Poppins-Bold.ttf);
 }
-
 body {
   font-family: poppins;
 }
@@ -16,38 +14,28 @@ body {
 .header {
   position: relative;
   font-size: 2.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   height: 25%;
   font-weight: bold;
 }
-
 .header .title {
   font-family: poppins-bold;
 }
-
 .header .title, .header .motto, .header .address, .header .phone {
   text-align: center;
 }
-
 .header .motto {
   font-size: 0.8rem;
   font-weight: lighter;
   font-family: poppins;
 }
-
 .header .address, .header .phone {
   font-size: 0.85rem;
   font-weight: lighter;
   font-family: poppins;
 }
-
 .header div {
   position: relative;
   padding: 0.2rem;
@@ -55,25 +43,16 @@ body {
 
 .passport-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  justify-content: center;
 }
-
 .passport-container .passport-container-inner {
   position: inherit;
   text-align: center;
   padding-top: 70px;
   padding-bottom: 30px;
 }
-
 .passport-container .passport {
   width: 100px;
   height: 100px;
@@ -83,7 +62,7 @@ body {
 #edit-button {
   width: 22mm;
   height: 8mm;
-  background-color: #080847;
+  background-color: rgb(8, 8, 71);
   border: 0px transparent;
   color: white;
   word-spacing: 5mm;
@@ -94,7 +73,7 @@ body {
 }
 
 .headers {
-  background-color: #09092b;
+  background-color: rgb(9, 9, 43);
   color: white;
   font-weight: bold;
   padding-left: 5mm;
@@ -105,26 +84,16 @@ body {
 
 .table-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .personal-table {
   position: relative;
   height: auto;
 }
-
 .personal-table .labels, .personal-table .values, .personal-table .action {
   min-width: 70mm;
   padding-left: 5mm;
@@ -133,15 +102,12 @@ body {
   padding-bottom: 1mm;
   font-weight: bold;
 }
-
 .personal-table .labels, .personal-table .values {
   background-color: wheat;
 }
-
 .personal-table .values {
   min-width: 120mm;
 }
-
 .personal-table .values .inputs {
   width: 100%;
   padding: 0 0 0 0;
@@ -153,7 +119,6 @@ body {
   overflow: hidden;
   background-color: transparent;
 }
-
 .personal-table .action {
   min-width: 30mm;
 }
@@ -163,15 +128,12 @@ body {
   margin-top: 10mm;
   width: 100mm;
 }
-
 .reg-summary .year {
   min-width: 50mm;
 }
-
 .reg-summary .term {
   min-width: 30mm;
 }
-
 .reg-summary .sppa {
   min-width: 20mm;
 }
@@ -180,23 +142,19 @@ body {
   position: inherit;
   margin-top: 10mm;
 }
-
 .subjects-table .sn {
   min-width: 12mm;
   text-align: center;
 }
-
 .subjects-table .name {
   min-width: 145mm;
   text-align: left;
   text-indent: 5mm;
 }
-
 .subjects-table .sub-action {
   min-width: 50mm;
   text-align: center;
 }
-
 .subjects-table .sn, .subjects-table .name, .subjects-table .sub-action {
   border: solid 1px lightgrey;
   border-collapse: collapse;
@@ -206,7 +164,7 @@ body {
   position: relative;
   width: 40mm;
   height: 8mm;
-  background-color: #07072b;
+  background-color: rgb(7, 7, 43);
   color: white;
   border: solid 0px transparent;
   font-family: poppins;
@@ -219,7 +177,7 @@ body {
   text-indent: 5mm;
   position: relative;
   margin-left: 5mm;
-  border: solid 0.5px #10104b;
+  border: solid 0.5px rgb(16, 16, 75);
   overflow: hidden;
   outline: hidden;
   font-family: poppins;
@@ -229,10 +187,9 @@ body {
   position: relative;
   width: 40mm;
   height: 8mm;
-  background-color: #011b01;
+  background-color: rgb(1, 27, 1);
   color: white;
   border: solid 0px transparent;
   font-family: poppins;
   font-weight: bold;
-}
-/*# sourceMappingURL=student-profile-page.css.map */
+}/*# sourceMappingURL=student-profile-page.css.map */

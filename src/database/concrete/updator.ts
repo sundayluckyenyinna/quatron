@@ -113,6 +113,25 @@ export default class Updator
         }
     }
 
+    async updateComments( teacherPath : string, principalPath : string ){
+    
+        const types = [{ com : 'teacher-comment', path : teacherPath }, { com : 'principal-comment', path : principalPath }];
+
+        for ( const type of types ){
+            await (await this.getRepository().getSchoolDataDatabaseConnection()).run(
+                'UPDATE school SET Data = ? WHERE Id = ?', type.path, type.com
+            );
+        }
+        return;
+    }
+
+    async updateColorSystem( colors : string[] ) : Promise<number> {
+        const changes : number = await(await (await this.getRepository().getSchoolDataDatabaseConnection()).run(
+            'UPDATE school SET Data = ? WHERE Id = ? ', colors.join('&'), 'colors'
+        )).changes as number;
+        return changes;
+    }
+
     private async insertIntoGradeSystemTable( gradeSystemArray : GradeSystem[] ){
 
         for ( let i = 0; i < gradeSystemArray.length; i ++ ){
