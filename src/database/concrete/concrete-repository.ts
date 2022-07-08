@@ -156,6 +156,10 @@ export default class ConcreteRepository extends Repository
         return await this.getUpdator().updateComments( teacherPath, principalPath );
     }
 
+    async updateColorSystem( colors : string[] ){
+        return await this.getUpdator().updateColorSystem( colors );
+    }
+
     deleteStudentByStudentNo(studentNo: string): Promise<void> {
         throw new Error('Method not implemented.');
     };

@@ -8,6 +8,7 @@ const $ = jQuery;
 
   
         getAllSchoolDataFromDataStore().then( data => {
+            console.log( data );
             setSchoolName( data.name );
             setSchoolMotto( data.motto );
             setSchoolAddress( data.address );
@@ -15,7 +16,6 @@ const $ = jQuery;
             setAllEmail( data.email );
             setAllMobile( data.telephone );
             logo = data.logo;
-            // console.log(  );
         });
 
         // GETTERs And SETTERS
@@ -461,13 +461,14 @@ $('.comment-save').on('click', async function( this, event ){
     const teacherLines : string[] = await ipcRenderer.invoke('get-file-lines', teacherCommentInput);
     const principalLines : string[] = await ipcRenderer.invoke('get-file-lines', principalCommentInput);
 
-    // tell the main process to the database
-    await ipcRenderer.invoke('save-comments', teacherCommentInput, principalCommentInput);
+
+    // tell the main process to send to the database
+    await ipcRenderer.invoke('save-comments', teacherLines.join('#'), principalLines.join('#'));
     return;
 });
 
 
 $('#color-save').on('click', function( event ){
     const colors : string[] = [$('#first-color').val()?.toString().trim() as string, $('#second-color').val()?.toString().trim() as string, $('#third-color').val()?.toString().trim() as string];
-    console.log( colors );
+    console.log( colors.join('&') );
 });

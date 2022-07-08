@@ -248,7 +248,15 @@ class Reader {
     }
     getAllSchoolData() {
         return __awaiter(this, void 0, void 0, function* () {
-            const rows = yield (yield this.getRepository().getSchoolDataDatabaseConnection()).all('SELECT * FROM school');
+            // check that the school table exists and create one if no one exists.
+            let rows = [];
+            try {
+                rows = yield (yield this.getRepository().getSchoolDataDatabaseConnection()).all('SELECT * FROM school');
+            }
+            catch (error) {
+                yield this.getRepository().getCreator().createSchoolDataTable();
+                rows = yield (yield this.getRepository().getSchoolDataDatabaseConnection()).all('SELECT * FROM school');
+            }
             const schoolData = {};
             rows.forEach((row) => {
                 const idValue = row.Id;
@@ -270,8 +278,14 @@ class Reader {
             return gradeSystemArray;
         });
     }
+    /**
+     * Returns an object of the grading system representing the grading scheme.
+     * @returns
+     */
     getGradingSystemObjectArray() {
         return __awaiter(this, void 0, void 0, function* () {
+            // check that the table exists and create one if not exist.
+            yield ((yield this.getRepository()).getCreator().createGradeSystemTable());
             const gradeObjects = yield (yield this.getRepository().getGradeSystemDatabaseConnection()).all('SELECT * FROM grade_system');
             return gradeObjects;
         });

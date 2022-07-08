@@ -17,6 +17,7 @@ const jquery_1 = __importDefault(require("jquery"));
 let logo = '';
 const $ = jquery_1.default;
 getAllSchoolDataFromDataStore().then(data => {
+    console.log(data);
     setSchoolName(data.name);
     setSchoolMotto(data.motto);
     setSchoolAddress(data.address);
@@ -24,7 +25,6 @@ getAllSchoolDataFromDataStore().then(data => {
     setAllEmail(data.email);
     setAllMobile(data.telephone);
     logo = data.logo;
-    // console.log(  );
 });
 // GETTERs And SETTERS
 function getSchoolName() {
@@ -432,13 +432,13 @@ $('.comment-save').on('click', function (event) {
         // tell the main process to get all the lines 
         const teacherLines = yield electron_1.ipcRenderer.invoke('get-file-lines', teacherCommentInput);
         const principalLines = yield electron_1.ipcRenderer.invoke('get-file-lines', principalCommentInput);
-        // tell the main process to the database
-        yield electron_1.ipcRenderer.invoke('save-comments', teacherCommentInput, principalCommentInput);
+        // tell the main process to send to the database
+        yield electron_1.ipcRenderer.invoke('save-comments', teacherLines.join('#'), principalLines.join('#'));
         return;
     });
 });
 $('#color-save').on('click', function (event) {
     var _a, _b, _c;
     const colors = [(_a = $('#first-color').val()) === null || _a === void 0 ? void 0 : _a.toString().trim(), (_b = $('#second-color').val()) === null || _b === void 0 ? void 0 : _b.toString().trim(), (_c = $('#third-color').val()) === null || _c === void 0 ? void 0 : _c.toString().trim()];
-    console.log(colors);
+    console.log(colors.join('&'));
 });

@@ -124,6 +124,22 @@ class Creator {
             }
         });
     }
+    createSchoolDataTableBare() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield (yield this.getRepository().getSchoolDataDatabaseConnection()).exec('CREATE TABLE IF NOT EXISTS school ( Id varchar(30) primary key, Data text )');
+            return true;
+        });
+    }
+    populateSchoolDataBare() {
+        return __awaiter(this, void 0, void 0, function* () {
+            // insert the ids. If the table already have this ids, the program will throw an error. If this happens, just continue
+            const ids = ['name', 'motto', 'address', 'email', 'telephone', 'logo', 'teacher-comment', 'principal-comment'];
+            for (let i = 0; i < ids.length; i++) {
+                const id = ids[i].trim();
+                yield (yield this.getRepository().getSchoolDataDatabaseConnection()).run('INSERT INTO school VALUES (?,?)', id, 'null');
+            }
+        });
+    }
     createGradeSystemTable() {
         return __awaiter(this, void 0, void 0, function* () {
             yield (yield this.getRepository().getGradeSystemDatabaseConnection()).exec('CREATE TABLE IF NOT EXISTS grade_system (Grade varchar(10) primary key, Lower_Score_Range Integer, Higher_Score_Range Integer, Remarks varchar(30))');

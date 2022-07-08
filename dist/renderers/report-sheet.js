@@ -15,6 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
 const jquery_1 = __importDefault(require("jquery"));
 const $ = jquery_1.default;
+const teacherComments = [];
+const principalComments = [];
+// collects the 'comments'
+function getAllComments() {
+    return __awaiter(this, void 0, void 0, function* () {
+    });
+}
 document.body.onload = function () {
     return __awaiter(this, void 0, void 0, function* () {
         const [data, additionalData] = yield electron_1.ipcRenderer.invoke('student-data');

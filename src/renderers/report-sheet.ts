@@ -5,7 +5,30 @@ import jQuery from "jquery";
 
 const $ = jQuery;
 
+// the comments
+let teacherComments : string[] = [];
+let principalComments : string[] = [];
+
+// the color system
+let colors : string[] = [];
+
+// collects the 'comments'
+async function getAllComments() : Promise<string[][]> {
+    const teacherComments : string = await ipcRenderer.invoke('get-teacher-comments');
+    const principalComments : string = await ipcRenderer.invoke('get-principal-comments');
+    return [teacherComments.split('#'), principalComments.split('#')];
+}
+
+// collects the color schemes
+async function getAllColors() : Promise<Array<String>> {
+    return  await ipcRenderer.invoke('get-colors');
+}
+
 document.body.onload = async function(){
+    
+    teacherComments = (await getAllComments())[0];
+    principalComments = (await getAllComments())[0];
+
     const [data, additionalData] = await ipcRenderer.invoke('student-data');
     
     console.log( data, additionalData);

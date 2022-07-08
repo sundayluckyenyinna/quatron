@@ -1,6 +1,7 @@
 import Repository from '../abstracts/repository';
 import Subject from '../../model/subject';
 import GradeSystem from '../../model/grade-settings';
+import ConcreteRepository from './concrete-repository';
 
 export default class Reader 
 {
@@ -245,10 +246,20 @@ export default class Reader
     }
 
     async getAllSchoolData() : Promise<Object> {
-        const rows : Object[] =  await (await this.getRepository().getSchoolDataDatabaseConnection()).all(
-            'SELECT * FROM school'
-        );
-        
+
+        // check that the school table exists and create one if no one exists.
+        let rows : Object[] = [];
+        try{
+            rows =  await (await this.getRepository().getSchoolDataDatabaseConnection()).all(
+                'SELECT * FROM school'
+            );
+        }catch( error ){
+            await ( this.getRepository() as ConcreteRepository ).getCreator().createSchoolDataTable();
+            rows =  await (await this.getRepository().getSchoolDataDatabaseConnection()).all(
+                'SELECT * FROM school'
+            );
+        }
+
         const schoolData : Object | any = {};
 
         rows.forEach( ( row : Object | any ) => {
@@ -277,7 +288,13 @@ export default class Reader
         return gradeSystemArray;
     }
 
+    /**
+     * Returns an object of the grading system representing the grading scheme.
+     * @returns 
+     */
     async getGradingSystemObjectArray() : Promise<Object[]> {
+        // check that the table exists and create one if not exist.
+        await((await this.getRepository() as ConcreteRepository).getCreator().createGradeSystemTable());
         const gradeObjects : [{ Grade : string, Lower_Score_Range : number, Higher_Score_Range : number, Remarks : string }] = await (await this.getRepository().getGradeSystemDatabaseConnection()).all(
             'SELECT * FROM grade_system'
         );

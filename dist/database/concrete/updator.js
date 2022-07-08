@@ -85,11 +85,6 @@ class Updator {
     ;
     updateSchoolData(payload) {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                yield this.getDefaultSchoolDataTable();
-            }
-            catch (error) { }
-            ; // just do nothing and continue execution.
             const keys = Object.keys(payload);
             for (let i = 0; i < keys.length; i++) {
                 const key = keys[i].toString();
@@ -113,18 +108,18 @@ class Updator {
             }
         });
     }
-    updateComments(teacherPath, principalPath) {
+    updateComments(teacherComments, principalComments) {
         return __awaiter(this, void 0, void 0, function* () {
-            const types = [{ com: 'teacher-comment', path: teacherPath }, { com: 'principal-comment', path: principalPath }];
+            const types = [{ com: 'teacher-comment', Comments: teacherComments }, { com: 'principal-comment', Comments: principalComments }];
             for (const type of types) {
-                yield (yield this.getRepository().getSchoolDataDatabaseConnection()).run('UPDATE school SET Data = ? WHERE Id = ?', type.path, type.com);
+                yield (yield this.getRepository().getSchoolDataDatabaseConnection()).run('UPDATE school SET Data = ? WHERE Id = ?', type.Comments, type.com);
             }
             return;
         });
     }
     updateColorSystem(colors) {
         return __awaiter(this, void 0, void 0, function* () {
-            const changes = yield (yield (yield this.getRepository().getSchoolDataDatabaseConnection()).run('UPDATE school SET Data = ? WHERE Id = ? ', colors.join('#'), 'colors')).changes;
+            const changes = yield (yield (yield this.getRepository().getSchoolDataDatabaseConnection()).run('UPDATE school SET Data = ? WHERE Id = ? ', colors.join('&'), 'colors')).changes;
             return changes;
         });
     }

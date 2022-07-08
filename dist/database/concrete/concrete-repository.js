@@ -200,6 +200,11 @@ class ConcreteRepository extends repository_1.default {
             return yield this.getUpdator().updateComments(teacherPath, principalPath);
         });
     }
+    updateColorSystem(colors) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.getUpdator().updateColorSystem(colors);
+        });
+    }
     deleteStudentByStudentNo(studentNo) {
         throw new Error('Method not implemented.');
     }

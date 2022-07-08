@@ -80,10 +80,6 @@ export default class Updator
 
     async updateSchoolData( payload : Object | any ) : Promise<number>{
 
-        try{
-            await this.getDefaultSchoolDataTable();
-        } catch( error ){ };  // just do nothing and continue execution.
-
         const keys : string[]  = Object.keys( payload );
 
         for ( let i = 0; i < keys.length; i++ ){
@@ -113,13 +109,13 @@ export default class Updator
         }
     }
 
-    async updateComments( teacherPath : string, principalPath : string ){
+    async updateComments( teacherComments : string, principalComments : string ){
     
-        const types = [{ com : 'teacher-comment', path : teacherPath }, { com : 'principal-comment', path : principalPath }];
+        const types = [{ com : 'teacher-comment', Comments : teacherComments }, { com : 'principal-comment', Comments : principalComments }];
 
         for ( const type of types ){
             await (await this.getRepository().getSchoolDataDatabaseConnection()).run(
-                'UPDATE school SET Data = ? WHERE Id = ?', type.path, type.com
+                'UPDATE school SET Data = ? WHERE Id = ?', type.Comments, type.com
             );
         }
         return;

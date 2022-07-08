@@ -1632,14 +1632,18 @@ async function handleOtherItemsBackup ( payload : Object | any ){
      progress.close();
 }
 
-ipcMain.handle('save-comments', async function(event, teacherPath : string, principalPath : string){
-    await new ConcreteRepository().updateComments( teacherPath, principalPath );
+ipcMain.handle('save-comments', async function(event, teacherComments : string, principalComments : string){
+    await new ConcreteRepository().updateComments( teacherComments, principalComments );
 });
 
 ipcMain.handle('get-file-lines', function( event, filePath ){
-    const lineString : string = fs.readFileSync( filePath, { encoding : 'utf-8' } ).toString() as string;
-    const withoutComment: string[] = lineString.split('@comment');
+    const lineString : string = fs.readFileSync( filePath, { encoding : 'utf-8' } ).toString().toLowerCase() as string;
+    const withoutComment: string[] = lineString.split('@comment').filter((value : string) => !value.trim().startsWith('@'));
     return withoutComment.join('').split('\r\n').filter((token : string) => token !== '' && token !== ' ');
+});
+
+ipcMain.handle('save-colors', async function( event, colors : string[] ){
+    await new ConcreteRepository().updateColorSystem( colors );
 });
 
 // console.log( new TeacherComment().loa )

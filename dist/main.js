@@ -1598,14 +1598,19 @@ function handleOtherItemsBackup(payload) {
         progress.close();
     });
 }
-electron_1.ipcMain.handle('save-comments', function (event, teacherPath, principalPath) {
+electron_1.ipcMain.handle('save-comments', function (event, teacherComments, principalComments) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield new concrete_repository_1.default().updateComments(teacherPath, principalPath);
+        yield new concrete_repository_1.default().updateComments(teacherComments, principalComments);
     });
 });
 electron_1.ipcMain.handle('get-file-lines', function (event, filePath) {
-    const lineString = fs_1.default.readFileSync(filePath, { encoding: 'utf-8' }).toString();
-    const withoutComment = lineString.split('@comment');
+    const lineString = fs_1.default.readFileSync(filePath, { encoding: 'utf-8' }).toString().toLowerCase();
+    const withoutComment = lineString.split('@comment').filter((value) => !value.trim().startsWith('@'));
     return withoutComment.join('').split('\r\n').filter((token) => token !== '' && token !== ' ');
+});
+electron_1.ipcMain.handle('save-colors', function (event, colors) {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield new concrete_repository_1.default().updateColorSystem(colors);
+    });
 });
 // console.log( new TeacherComment().loa )
