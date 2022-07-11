@@ -250,7 +250,10 @@ $('#generate-report-button').on('click', async function(event){
     }; 
     // send the request to the main process for the processing of the report sheets
     const payload = await getSingleOrAllStudentDataForReportSheetForYearTermClass();
+    console.log(payload);
     await ipcRenderer.invoke('all-or-single-students-report', payload, getAllSelectedBoxValues());
+    // await ipcRenderer.invoke('print-html');
+
 });
 
 

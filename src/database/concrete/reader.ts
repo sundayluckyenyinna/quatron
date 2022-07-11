@@ -301,6 +301,27 @@ export default class Reader
         return gradeObjects;        
     }
 
+    async getTeacherComments() : Promise<string[]> {
+        const raw : object | any = await( await this.getRepository().getSchoolDataDatabaseConnection() ).get(
+             'SELECT Data FROM school WHERE Id = ?', 'teacher-comments'
+        );
+        return ( raw.Data as string ).split('&');
+    }
+
+    async getPrincipalComments() : Promise<string[]> {
+        const raw : object | any = await( await this.getRepository().getSchoolDataDatabaseConnection() ).get(
+            'SELECT Data FROM school WHERE Id = ?', 'principal-comments'
+        );
+        return ( raw.Data as string ).split('&');
+    }
+
+    async getColors() : Promise<String[]> {
+        const raw : object | any = await( await this.getRepository().getSchoolDataDatabaseConnection() ).get(
+            'SELECT Data FROM school WHERE Id = ?', 'colors'
+        );
+        return ( raw.Data as string ).split('&');
+    }
+
     // defaults
     async getDefaultAcademicYearTable(){
         await (await this.getRepository().getAcademicYearDatabaseConnection()).exec(

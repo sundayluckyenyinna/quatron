@@ -30,6 +30,7 @@ import GradeSystem from './model/grade-settings';
 import Comment from './helper/comment';
 import TeacherComment from './helper/teacher-comment';
 import { CommentType } from './helper/comment-type';
+import { ALL_TEACHER_DEFAULTS_COMMENT, ALL_PRINCIPAL_DEFAULT_COMMENT } from './helper/default-comment';
 
 // const worker = new Worker('./dist/workers/report-sheet-worker.js', { workerData : { message : 'I am good'} } );
 // worker.on('message', function(value){
@@ -39,6 +40,8 @@ import { CommentType } from './helper/comment-type';
 
 const pdf = require('html-pdf-node');
 
+var newHtml : string[] = [];
+var studentIds : string[] = [];
 
 var studentData : Object | any;
 var additionalData : Object | any;
@@ -71,11 +74,17 @@ app.on('ready', async function(){
     nativeTheme.themeSource = 'dark';
 });
 
+ipcMain.handle('update-report-html', function(event, html){
+    newHtml.push(html);
+});
+
+ipcMain.handle('print-html', function(event){
+    console.log(newHtml);
+})
+
 ipcMain.handle('all-or-single-students-report', async function(event, payload, additionalPayload){
 
-    const reportDatas = [];
-
-    for(let i = 0; i < payload.length; i++){
+    const reportDatas: { studentId: string; html: string; }[]  = [];
         // create a new invisble browser window 
         var win = new BrowserWindow({ 
             show : false,
@@ -86,33 +95,68 @@ ipcMain.handle('all-or-single-students-report', async function(event, payload, a
             },
         });
 
+        win.webContents.on('dom-ready', async function(event){
+            console.log('ready');
+         });
+
+        const sleepTime = (payload.length/4) * 1000;
+
+        // Start a new indeterminate progress bar
+        const progressBar = new ProgressBar({
+            text: 'Preparing report sheets',
+            detail: `Compiling report sheets. This might take about ${Math.floor((sleepTime * payload.length)/1000) + 1} seconds.`,
+            browserWindow:{
+                parent: BrowserWindow.getFocusedWindow() as BrowserWindow,
+                modal:true
+            }
+        });
+
+    for(let i = 0; i < payload.length;){
+
+
         // update the studentData and additionalData variable for each student for each report sheet.
         studentData = payload[i];
         additionalData = additionalPayload;
 
         const studentId = [studentData.studentDetails.Surname, studentData.studentDetails.First_Name,
-            studentData.studentDetails.Middle_Name, studentData.studentDetails.Student_No].join('_')
+            studentData.studentDetails.Middle_Name, studentData.studentDetails.Student_No].join('_');
 
-        await win.loadFile(path.join(__dirname,'ui','html','report-sheet.html'));
+        studentIds.push(studentId);
 
-        const updatedHtml = await win.webContents.executeJavaScript('document.documentElement.outerHTML');
-        reportDatas.push( { studentId: studentId + '.pdf', html: updatedHtml } );
+       await win.webContents.loadFile(path.join(__dirname,'ui','html','report-sheet.html'));
+
+       await sleep(sleepTime);
+    //    const updatedHtml = newHtml; //await win.webContents.executeJavaScript('document.documentElement.outerHTML');
+    //     reportDatas.push( { studentId: studentId + '.pdf', html: updatedHtml } );
+       i++;
     };
 
-    // call the method to actually generate the report sheet
+    for(let i = 0; i < newHtml.length; i++){
+        reportDatas.push({studentId: studentIds[i]+'.pdf', html: newHtml[i]})
+    };
+
+    await sleep(1000);
+    progressBar.close();
+//    console.log(reportDatas);
+   // call the method to actually generate the report sheet
     generateReportSheetForSingleOrAllStudents(reportDatas, additionalPayload)
     .then((numberOfStudents) => {
         currentProgressBar.close();
+        newHtml.splice(0, newHtml.length);
         const messagePart = numberOfStudents > 1 ? 'Report sheets for all students' : 'Report sheet for student';
         dialog.showMessageBoxSync({
             message : messagePart + ` generated\n\nDestination Folder: ${additionalPayload.rootFolder}\n\nNumber of student(s): ${numberOfStudents} `,
             title : 'Report sheet generation status',
             type : 'info',
-        }); return;
+        }); 
+        return;
     })
     .catch(error => {
         // first close the current progressBar
         currentProgressBar.close();
+
+        newHtml.splice(0, newHtml.length);
+        
         // display an error dialog
         dialog.showMessageBoxSync({
             message : 'Some report sheets might have been opened on your PDF reader\nTry to close the opened report sheets and try again.',
@@ -191,8 +235,6 @@ async function mergeReports( additionalPayload : Object | any ) : Promise<string
 };
 
 async function generateReportSheetForSingleOrAllStudents( reportData : Object[], additionalPayload : Object | any ) : Promise<number> {
-    // get the current BrowserWindow
-    const win : BrowserWindow | null = BrowserWindow.getFocusedWindow();
     // create a new progress bar
     const progressBar = new ProgressBar({
         indeterminate: false,
@@ -202,7 +244,8 @@ async function generateReportSheetForSingleOrAllStudents( reportData : Object[],
         maxValue: reportData.length,
         abortOnError : true,
         browserWindow : {
-            parent: win || undefined
+            parent: BrowserWindow.getFocusedWindow() as BrowserWindow,
+            modal: true
         }
     });
 
@@ -1642,8 +1685,23 @@ ipcMain.handle('get-file-lines', function( event, filePath ){
     return withoutComment.join('').split('\r\n').filter((token : string) => token !== '' && token !== ' ');
 });
 
+ipcMain.handle('get-teacher-comments', async function(event){
+    return await new ConcreteRepository().getTeacherComments();
+});
+
+ipcMain.handle('get-principal-comments', async function(event){
+    return await new ConcreteRepository().getPrincipalComments();
+});
+
 ipcMain.handle('save-colors', async function( event, colors : string[] ){
     await new ConcreteRepository().updateColorSystem( colors );
 });
 
-// console.log( new TeacherComment().loa )
+// Handlers to get all the default comments of teachers and principal
+ipcMain.handle('get-default-teacher-comments', function( event ){
+    return ALL_TEACHER_DEFAULTS_COMMENT;
+});
+
+ipcMain.handle('get-default-principal-comments', function(event){
+    return ALL_PRINCIPAL_DEFAULT_COMMENT;
+});

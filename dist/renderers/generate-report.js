@@ -317,6 +317,7 @@ $('#generate-report-button').on('click', function (event) {
         ;
         // send the request to the main process for the processing of the report sheets
         const payload = yield getSingleOrAllStudentDataForReportSheetForYearTermClass();
+        console.log(payload);
         yield electron_1.ipcRenderer.invoke('all-or-single-students-report', payload, getAllSelectedBoxValues());
     });
 });

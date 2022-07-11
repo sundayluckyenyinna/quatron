@@ -463,12 +463,12 @@ $('.comment-save').on('click', async function( this, event ){
 
 
     // tell the main process to send to the database
-    await ipcRenderer.invoke('save-comments', teacherLines.join('#'), principalLines.join('#'));
+    await ipcRenderer.invoke('save-comments', teacherLines.join('&'), principalLines.join('&'));
     return;
 });
 
 
-$('#color-save').on('click', function( event ){
+$('#color-save').on('click', async function( event ){
     const colors : string[] = [$('#first-color').val()?.toString().trim() as string, $('#second-color').val()?.toString().trim() as string, $('#third-color').val()?.toString().trim() as string];
-    console.log( colors.join('&') );
+    await ipcRenderer.invoke('save-colors');
 });

@@ -290,6 +290,24 @@ class Reader {
             return gradeObjects;
         });
     }
+    getTeacherComments() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const raw = yield (yield this.getRepository().getSchoolDataDatabaseConnection()).get('SELECT Data FROM school WHERE Id = ?', 'teacher-comments');
+            return raw.Data.split('&');
+        });
+    }
+    getPrincipalComments() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const raw = yield (yield this.getRepository().getSchoolDataDatabaseConnection()).get('SELECT Data FROM school WHERE Id = ?', 'principal-comments');
+            return raw.Data.split('&');
+        });
+    }
+    getColors() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const raw = yield (yield this.getRepository().getSchoolDataDatabaseConnection()).get('SELECT Data FROM school WHERE Id = ?', 'colors');
+            return raw.Data.split('&');
+        });
+    }
     // defaults
     getDefaultAcademicYearTable() {
         return __awaiter(this, void 0, void 0, function* () {

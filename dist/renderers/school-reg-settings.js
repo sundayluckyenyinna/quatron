@@ -433,12 +433,14 @@ $('.comment-save').on('click', function (event) {
         const teacherLines = yield electron_1.ipcRenderer.invoke('get-file-lines', teacherCommentInput);
         const principalLines = yield electron_1.ipcRenderer.invoke('get-file-lines', principalCommentInput);
         // tell the main process to send to the database
-        yield electron_1.ipcRenderer.invoke('save-comments', teacherLines.join('#'), principalLines.join('#'));
+        yield electron_1.ipcRenderer.invoke('save-comments', teacherLines.join('&'), principalLines.join('&'));
         return;
     });
 });
 $('#color-save').on('click', function (event) {
     var _a, _b, _c;
-    const colors = [(_a = $('#first-color').val()) === null || _a === void 0 ? void 0 : _a.toString().trim(), (_b = $('#second-color').val()) === null || _b === void 0 ? void 0 : _b.toString().trim(), (_c = $('#third-color').val()) === null || _c === void 0 ? void 0 : _c.toString().trim()];
-    console.log(colors.join('&'));
+    return __awaiter(this, void 0, void 0, function* () {
+        const colors = [(_a = $('#first-color').val()) === null || _a === void 0 ? void 0 : _a.toString().trim(), (_b = $('#second-color').val()) === null || _b === void 0 ? void 0 : _b.toString().trim(), (_c = $('#third-color').val()) === null || _c === void 0 ? void 0 : _c.toString().trim()];
+        yield electron_1.ipcRenderer.invoke('save-colors');
+    });
 });

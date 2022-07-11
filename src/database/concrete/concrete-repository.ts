@@ -132,6 +132,18 @@ export default class ConcreteRepository extends Repository
         return await this.getReader().getGradingSystemObjectArray();
     }
 
+    async getTeacherComments(){
+        return await this.getReader().getTeacherComments();
+    }
+
+    async getPrincipalComments(){
+        return await this.getReader().getPrincipalComments();
+    }
+
+    async getColors(){
+        return await this.getReader().getColors();
+    }
+
     async updateStudentScoresForYearTermClass( scores : Object[], payload : Object ) : Promise<boolean> {
         return await this.getUpdator().updateStudentScoresForYearTermClass( scores, payload);
     };

@@ -40,11 +40,14 @@ const email_sender_1 = __importDefault(require("./google/email-sender"));
 const zip_folder_1 = __importDefault(require("./helper/zip-folder"));
 const electron_3 = require("electron");
 const grade_settings_1 = __importDefault(require("./model/grade-settings"));
+const default_comment_1 = require("./helper/default-comment");
 // const worker = new Worker('./dist/workers/report-sheet-worker.js', { workerData : { message : 'I am good'} } );
 // worker.on('message', function(value){
 //     console.log( value );
 // });
 const pdf = require('html-pdf-node');
+var newHtml = [];
+var studentIds = [];
 var studentData;
 var additionalData;
 var currentProgressBar;
@@ -73,33 +76,65 @@ electron_1.app.on('ready', function () {
         electron_1.nativeTheme.themeSource = 'dark';
     });
 });
+electron_1.ipcMain.handle('update-report-html', function (event, html) {
+    newHtml.push(html);
+});
+electron_1.ipcMain.handle('print-html', function (event) {
+    console.log(newHtml);
+});
 electron_1.ipcMain.handle('all-or-single-students-report', function (event, payload, additionalPayload) {
     return __awaiter(this, void 0, void 0, function* () {
         const reportDatas = [];
-        for (let i = 0; i < payload.length; i++) {
-            // create a new invisble browser window 
-            var win = new electron_1.BrowserWindow({
-                show: false,
-                webPreferences: {
-                    nodeIntegration: true,
-                    contextIsolation: false,
-                    webviewTag: true
-                },
+        // create a new invisble browser window 
+        var win = new electron_1.BrowserWindow({
+            show: false,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false,
+                webviewTag: true
+            },
+        });
+        win.webContents.on('dom-ready', function (event) {
+            return __awaiter(this, void 0, void 0, function* () {
+                console.log('ready');
             });
+        });
+        const sleepTime = (payload.length / 4) * 1000;
+        // Start a new indeterminate progress bar
+        const progressBar = new electron_progressbar_1.default({
+            text: 'Preparing report sheets',
+            detail: `Compiling report sheets. This might take about ${Math.floor((sleepTime * payload.length) / 1000) + 1} seconds.`,
+            browserWindow: {
+                parent: electron_1.BrowserWindow.getFocusedWindow(),
+                modal: true
+            }
+        });
+        for (let i = 0; i < payload.length;) {
             // update the studentData and additionalData variable for each student for each report sheet.
             studentData = payload[i];
             additionalData = additionalPayload;
             const studentId = [studentData.studentDetails.Surname, studentData.studentDetails.First_Name,
                 studentData.studentDetails.Middle_Name, studentData.studentDetails.Student_No].join('_');
-            yield win.loadFile(path_1.default.join(__dirname, 'ui', 'html', 'report-sheet.html'));
-            const updatedHtml = yield win.webContents.executeJavaScript('document.documentElement.outerHTML');
-            reportDatas.push({ studentId: studentId + '.pdf', html: updatedHtml });
+            studentIds.push(studentId);
+            yield win.webContents.loadFile(path_1.default.join(__dirname, 'ui', 'html', 'report-sheet.html'));
+            yield sleep(sleepTime);
+            //    const updatedHtml = newHtml; //await win.webContents.executeJavaScript('document.documentElement.outerHTML');
+            //     reportDatas.push( { studentId: studentId + '.pdf', html: updatedHtml } );
+            i++;
         }
         ;
+        for (let i = 0; i < newHtml.length; i++) {
+            reportDatas.push({ studentId: studentIds[i] + '.pdf', html: newHtml[i] });
+        }
+        ;
+        yield sleep(1000);
+        progressBar.close();
+        //    console.log(reportDatas);
         // call the method to actually generate the report sheet
         generateReportSheetForSingleOrAllStudents(reportDatas, additionalPayload)
             .then((numberOfStudents) => {
             currentProgressBar.close();
+            newHtml.splice(0, newHtml.length);
             const messagePart = numberOfStudents > 1 ? 'Report sheets for all students' : 'Report sheet for student';
             electron_1.dialog.showMessageBoxSync({
                 message: messagePart + ` generated\n\nDestination Folder: ${additionalPayload.rootFolder}\n\nNumber of student(s): ${numberOfStudents} `,
@@ -111,6 +146,7 @@ electron_1.ipcMain.handle('all-or-single-students-report', function (event, payl
             .catch(error => {
             // first close the current progressBar
             currentProgressBar.close();
+            newHtml.splice(0, newHtml.length);
             // display an error dialog
             electron_1.dialog.showMessageBoxSync({
                 message: 'Some report sheets might have been opened on your PDF reader\nTry to close the opened report sheets and try again.',
@@ -189,8 +225,6 @@ function mergeReports(additionalPayload) {
 ;
 function generateReportSheetForSingleOrAllStudents(reportData, additionalPayload) {
     return __awaiter(this, void 0, void 0, function* () {
-        // get the current BrowserWindow
-        const win = electron_1.BrowserWindow.getFocusedWindow();
         // create a new progress bar
         const progressBar = new electron_progressbar_1.default({
             indeterminate: false,
@@ -200,7 +234,8 @@ function generateReportSheetForSingleOrAllStudents(reportData, additionalPayload
             maxValue: reportData.length,
             abortOnError: true,
             browserWindow: {
-                parent: win || undefined
+                parent: electron_1.BrowserWindow.getFocusedWindow(),
+                modal: true
             }
         });
         currentProgressBar = progressBar;
@@ -1608,9 +1643,25 @@ electron_1.ipcMain.handle('get-file-lines', function (event, filePath) {
     const withoutComment = lineString.split('@comment').filter((value) => !value.trim().startsWith('@'));
     return withoutComment.join('').split('\r\n').filter((token) => token !== '' && token !== ' ');
 });
+electron_1.ipcMain.handle('get-teacher-comments', function (event) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield new concrete_repository_1.default().getTeacherComments();
+    });
+});
+electron_1.ipcMain.handle('get-principal-comments', function (event) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield new concrete_repository_1.default().getPrincipalComments();
+    });
+});
 electron_1.ipcMain.handle('save-colors', function (event, colors) {
     return __awaiter(this, void 0, void 0, function* () {
         yield new concrete_repository_1.default().updateColorSystem(colors);
     });
 });
-// console.log( new TeacherComment().loa )
+// Handlers to get all the default comments of teachers and principal
+electron_1.ipcMain.handle('get-default-teacher-comments', function (event) {
+    return default_comment_1.ALL_TEACHER_DEFAULTS_COMMENT;
+});
+electron_1.ipcMain.handle('get-default-principal-comments', function (event) {
+    return default_comment_1.ALL_PRINCIPAL_DEFAULT_COMMENT;
+});

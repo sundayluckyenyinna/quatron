@@ -167,6 +167,21 @@ class ConcreteRepository extends repository_1.default {
             return yield this.getReader().getGradingSystemObjectArray();
         });
     }
+    getTeacherComments() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.getReader().getTeacherComments();
+        });
+    }
+    getPrincipalComments() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.getReader().getPrincipalComments();
+        });
+    }
+    getColors() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.getReader().getColors();
+        });
+    }
     updateStudentScoresForYearTermClass(scores, payload) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield this.getUpdator().updateStudentScoresForYearTermClass(scores, payload);
